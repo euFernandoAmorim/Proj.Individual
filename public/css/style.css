@@ -54,9 +54,16 @@ body {
     justify-content: center;
 }
 
-.logo{
+.slogan .logo{
     width: 325px;
     height: 175px;
+}
+
+.logo{
+   position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 30px;
 }
 
 .slogan button{
