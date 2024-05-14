@@ -6,29 +6,104 @@ body {
 }
 
 .header {
-    border-bottom: 3px solid #32b9cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background-color: black;
+    border-bottom: 3px solid white;
 }
 
 .container {
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
-.header .container {
-    justify-content: space-between;
+.header .container{
+    justify-content: center;
 }
 
 .titulo {
-    color: #32b9cd;
+    color: red;
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
     list-style: none;
-    width: 300px;
+    width: 500px;
     justify-content: space-between;
-    color: #e3b062;
+    color: white;
     align-items: center;
+}
+
+.banner {
+    display: flex;
+    padding: 0px 20px 30px 10px;
+    color: white;
+    height: 500px;
+    align-items: center;
+}
+
+.slogan{
+    width: 400px;
+    border-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 325px;
+    height: 175px;
+}
+
+.slogan button{
+    background-color: black;
+    color: yellow;
+    border-color: red;
+    height: 40px;
+    width: 160px;
+    font-size: 125%;
+}
+
+.slogan h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.musculosos{
+    margin-left: 100px;
+    position: relative;
+    width: 500px;
+    height: 400px;
+}
+
+.musculosos img{
+    border-radius: 20px;
+    border:2px solid white;
+}
+
+.cbum{
+    width: 600px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.dino{
+    height: 250px;
+    width: 225px;
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.agora{
+    font-weight: 800;
+    color: red;
 }
