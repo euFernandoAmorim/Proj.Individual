@@ -142,7 +142,6 @@ body {
 .login {
   height: 600px;
   background-size: cover;
-  border-bottom: 3px solid white;
 }
 
 .login .container {
@@ -154,7 +153,7 @@ body {
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: black;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -163,7 +162,7 @@ body {
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
-  border: 3px solid rgb(185, 14, 14);
+  border: 3px solid white;
   opacity: 50%;
 }
 
