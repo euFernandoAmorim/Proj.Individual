@@ -17,16 +17,40 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
+  border-bottom: 3px solid white;
+  position: absolute;
 }
+
+.container2{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+  opacity: 0.6;
+  animation: zoom 5s;
+}
+
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
    background-color: black;
-  border-bottom: 3px solid #c60a03;
 }
 
 .header a{
@@ -48,6 +72,8 @@ body {
 
 .header .container{
   justify-content: center;
+  border-bottom: 3px solid #ad0303;
+  margin-bottom: 50px;
 }
 
 .navbar {
@@ -72,7 +98,6 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
 }
 
@@ -117,7 +142,6 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
 }
 
