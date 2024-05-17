@@ -62,7 +62,7 @@
           </div>
           <div class="campo">
             <span>Data de Nascimento:</span>
-            <input id="dtnasc_input" type="text" placeholder="07/03/2024" />
+            <input id="dtnasc_input" type="text" placeholder="2024/03/07" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -108,13 +108,13 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value
+    var dtnascVar = dtnasc_input.value
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      dtnascVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -123,8 +123,6 @@
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000);
-    }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -138,7 +136,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        empresaServer: empresaVar
+        dtnascServer: dtnascVar
       }),
     })
       .then(function (resposta) {
@@ -167,7 +165,7 @@
 
     return false;
   }
-
+}
   function listar() {
     fetch("/empresas/listar", {
       method: "GET",
