@@ -4,28 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        #div_pink {
-            height: 100vh; 
-            background-color: pink;
-        }
-
-        #div_nuvem {
-            top: 0;
-            left: 0;
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            background-color: white;
-            border: 2px solid black;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="tetris_style.css">
 </head>
 <!-- "event" é um parâmetro que indica que sua função irá receber o evento disparado "ao pressionar uma tecla" -->
 <body onkeydown="mover_nuvem(event)">
@@ -48,8 +28,8 @@
 </html>
 
 <script>
-    var global_top = 0; // distância atual entre o elemento e o topo da página
-    var global_left = 0; // distância atual entre o elemento e a lateral esquerda da página
+    var global_top = 50; // distância atual entre o elemento e o topo da página
+    var global_left = 50; // distância atual entre o elemento e a lateral esquerda da página
     var unidade_medida = "px";
     
 
@@ -78,13 +58,13 @@
 
 
     function mover_sozinho() {
-        global_left += 5; // incrementa a distância do lado esquerdo em 1 
-        div_nuvem.style.left = `${global_left}${unidade_medida}`; // atualiza a posição da nuvem
+        global_top += 5; // incrementa a distância do lado esquerdo em 1 
+        div_nuvem.style.top = `${global_top}${unidade_medida}`; // atualiza a posição da nuvem
 
         // se a distância do lado esquerdo for maior que 100<unidade_medida>, limpa o intervalo criado;
-        if (global_left > 100) {
-            clearInterval(intervalo);
-        }
+        // if (global_left > 100) {
+        //     clearInterval(intervalo);
+        // }
     }
 
     var intervalo = setInterval(mover_sozinho, 100); 
