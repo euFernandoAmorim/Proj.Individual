@@ -116,6 +116,9 @@ body {
 }
 
 .dash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 80%;
   position: relative;
   top: 0;
@@ -125,76 +128,143 @@ body {
   overflow: auto;
 }
 
-.area-parametros-alerta {
-  /* border: 2px solid pink; */
+.biblioteca {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 70%;
   margin: auto;
-  margin-top: 10px;
-  background-color: #212124;
+  margin-top: 20px;
 }
 
-.area-parametros-alerta .titulo-legenda {
+.titulo {
+  background-color: #212124;
+  border: 2px solid #ad0303;
+  width: 575px;
+  height: 100px;
+}
+
+.titulo .titulo-legenda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-weight: 600;
   width: fit-content;
   margin: 10px 20px;
+  font-size: 50px;
 }
 
-.parametros-alerta {
+.exercicios{
+
+  margin-top: 75px;
+  width: 90%;
+  height: 900px;
+}
+.grupo-muscular{
+ 
+  height: 400px;
+}
+
+.cards{
   display: flex;
-  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
 }
 
-.item-regua {
-  width: 20%;
-  text-align: center;
-  height: 80px;
+.grupo-muscular h1{
+  color: #f71111;
+}
+
+.card-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card-container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card .img-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
+}
+
+.card .img-content svg {
+  width: 50px;
+  height: 50px;
+  fill: #212121;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* .card .img-content img{
+  width: 90%;
+  border-radius: 20px;
+} */
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-self: center;
+  gap: 10px;
+  color: #e8e8e8;
+  padding: 20px 24px;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.item-regua p {
-  margin: 0;
-  font-weight: 500;
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+  overflow: hidden;
 }
 
-.item-regua p:nth-child(2) {
-  font-weight: 800;
+.card:hover .content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.perigo-frio {
-  background-color: #5c6bc0;
+.card:hover .img-content {
+  scale: 2.5;
+  rotate: 30deg;
+  filter: blur(7px);
 }
 
-.perigo-quente {
-  background-color: #ff7043;
+.card:hover .img-content svg {
+  fill: transparent;
 }
 
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  color: white;
-}
 
 .card-aquario {
   margin: 2%;
@@ -234,15 +304,6 @@ body {
 
 .title-aquario {
   width: 100%;
-}
-
-
-.cards h1 {
-  font-size: 22px;
-  border-bottom: solid white 1px;
-  text-align: left;
-  font-weight: lighter;
-  margin: 20px;
 }
 
 .temperatura,
