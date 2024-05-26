@@ -1,13 +1,15 @@
-var likeModel = require("../models/likeModel");
+var likeModel = require("../models/curtirModel");
 
 
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var like = req.body.likeServer;
+    var curtir = req.body.curtirServer;
+    var idUsuario = req.params.idUsuario;
+    var grupo_muscular = req.body.grupo_muscularServer;
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        likeModel.cadastrar(like)
+        curtirModel.cadastrar(curtir, idUsuario, grupo_muscular)
             .then(
                 function (resultado) {
                     res.json(resultado);
