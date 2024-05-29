@@ -18,7 +18,26 @@ function cadastrar(curtir, idUsuario, grupo_muscular) {
     return database.executar(instrucaoSql);
 }
 
+function verificar_curtidas(idUsuario, grupo_muscular) {
+            console.log("Executando a instrução SQL: \n" + instrucaoSql2);
+            var instrucaoSql2 = `
+            select fkUsuario as usuario, fkGrupo as grupo from curtida
+             where fkUsuario = ${idUsuario} and fkGrupo = ${grupo_muscular};
+        `;
+            return database.executar(instrucaoSql2);
+        }
+
+
+function remover(idUsuario, grupo_muscular) {
+            console.log("Executando a instrução SQL: \n" + instrucaoSql3);
+            var instrucaoSql3 = `
+            update curtida set curtir = null where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular};
+    `;
+            return database.executar(instrucaoSql3);
+        }
+
 module.exports = {
-    autenticar,
-    cadastrar
+    cadastrar,
+    verificar_curtidas,
+    remover
 };

@@ -66,8 +66,6 @@ insert into curtida values
 (3, 1, 1, 0),
 (4, 1, 1, 0);
 
-select * from usuario;
-
 select * from curtida;
 truncate table curtida;
 
@@ -82,3 +80,10 @@ insert into curtida values
 select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as dscurtidas from grupo_muscular
 join curtida on fkgrupo = idgrupo
 group by curtida.fkgrupo;
+
+select curtida.fkUsuario, curtida.fkGrupo from curtida
+join usuario on fkusuario = id where id = 1;
+
+update curtida set curtir = null where fkusuario = 1 and fkgrupo = 1;
+
+truncate table curtida;
