@@ -4,14 +4,23 @@ var database = require("../database/config")
 function cadastrar(curtir, idUsuario, grupo_muscular) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", curtir, idUsuario, grupo_muscular);
 
-    // let teste = [];
-    // teste = dtNasc.split("/");
-    // console.log(teste);
-    
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
         INSERT INTO curtida (fkUsuario, fkGrupo, curtir) VALUES ('${idUsuario}', '${grupo_muscular}', '${curtir}');
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function cadastrar_descurtir(curtir, idUsuario, grupo_muscular) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", curtir, idUsuario, grupo_muscular);
+
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+        INSERT INTO curtida (fkUsuario, fkGrupo, descurtir) VALUES ('${idUsuario}', '${grupo_muscular}', '${curtir}');
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -36,6 +45,14 @@ function remover(idUsuario, grupo_muscular) {
             return database.executar(instrucaoSql3);
         }
 
+        function remover_descurtir(idUsuario, grupo_muscular) {
+            console.log("Executando a instrução SQL: \n" + instrucaoSql6);
+            var instrucaoSql6 = `
+            update curtida set descurtir = null where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular};
+    `;
+            return database.executar(instrucaoSql6);
+        }
+
         function atualizar(curtir, idUsuario, grupo_muscular) {
             console.log("Executando a instrução SQL: \n" + instrucaoSql4);
             var instrucaoSql4 = `
@@ -44,9 +61,20 @@ function remover(idUsuario, grupo_muscular) {
             return database.executar(instrucaoSql4);
         }
 
+        function atualizar_descurtir(curtir, idUsuario, grupo_muscular) {
+            console.log("Executando a instrução SQL: \n" + instrucaoSql5);
+            var instrucaoSql5 = `
+            update curtida set descurtir = ${curtir} where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular};
+    `;
+            return database.executar(instrucaoSql5);
+        }
+
 module.exports = {
     cadastrar,
     verificar_curtidas,
     remover,
-    atualizar
+    atualizar,
+    atualizar_descurtir,
+    remover_descurtir,
+    cadastrar_descurtir
 };
