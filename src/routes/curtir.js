@@ -16,4 +16,9 @@ router.post("/remover", function (req, res) {
     curtirController.remover(req, res);
 })
 
+router.post("/atualizar", function (req, res) {
+    curtirController.atualizar(req, res);
+})
+
+
 module.exports = router;

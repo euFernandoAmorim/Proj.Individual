@@ -36,8 +36,17 @@ function remover(idUsuario, grupo_muscular) {
             return database.executar(instrucaoSql3);
         }
 
+        function atualizar(curtir, idUsuario, grupo_muscular) {
+            console.log("Executando a instrução SQL: \n" + instrucaoSql4);
+            var instrucaoSql4 = `
+            update curtida set curtir = ${curtir} where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular};
+    `;
+            return database.executar(instrucaoSql4);
+        }
+
 module.exports = {
     cadastrar,
     verificar_curtidas,
-    remover
+    remover,
+    atualizar
 };

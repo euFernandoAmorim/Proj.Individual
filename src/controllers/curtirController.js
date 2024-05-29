@@ -20,7 +20,7 @@ function cadastrar(req, res) {
         var idUsuario = req.body.idUsuarioServer;
         var grupo_muscular = req.body.grupo_muscularServer;
 
-        curtirModel.verificar(idUsuario, grupo_muscular)
+        curtirModel.verificar_curtidas(idUsuario, grupo_muscular)
         .then(
             function (resultado_verificar_curtidas) {
     
@@ -45,8 +45,24 @@ function cadastrar(req, res) {
                 );
         }
 
+        
+function atualizar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var curtir = req.body.curtirServer;
+    var idUsuario = req.body.idUsuarioServer;
+    var grupo_muscular = req.body.grupo_muscularServer;
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        curtirModel.atualizar(curtir, idUsuario, grupo_muscular)
+            .then(
+                function (resultado_atualizar) {
+                    res.json(resultado_atualizar);
+                }
+            );
+    }
+
 module.exports = {
     cadastrar,
     verificar_curtidas,
-    remover
+    remover,
+    atualizar
 }

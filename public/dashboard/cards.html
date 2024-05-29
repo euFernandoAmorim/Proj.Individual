@@ -167,10 +167,30 @@
   var curtir = 1;
   var idUsuario = sessionStorage.ID_USUARIO;
   var grupo_muscular = 0;
+  var cadastrado = 0;
 
   function gostei(checkbox){
-    
     grupo_muscular = Number(checkbox.value);
+
+    verificar();
+
+    if(cadastrado == 1){
+
+      fetch("/curtir/atualizar", {
+    method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/curtir.js
+        curtirServer: curtir
+      }),
+    })
+
+    }
+    
+    else{
 
     if (checkbox.checked){
 
@@ -204,7 +224,7 @@
       }),
     })
     }
-
+  }
   }
 
 function verificar(){
@@ -220,9 +240,15 @@ function verificar(){
             })
         }).then(function (resposta){
           resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+            console.log(json.resultado_verificar_curtidas[0])
+            var usuario = (json.resultado_verificar_curtidas[0]).usuario;
+            var grupo = (json.resultado_verificar_curtidas[0]).grupo;
 
-            console.log( resultado_verificar_curtidas[0])
-
+            if(usuario == idUsuario && grupo == grupo_muscular){
+              cadastrado = 1;
+            }
           })
         });
       }
