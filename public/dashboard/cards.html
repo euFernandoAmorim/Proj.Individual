@@ -166,8 +166,10 @@
 <script>
   var curtir = 1;
   var idUsuario = sessionStorage.ID_USUARIO;
+  var nomeUsuario = sessionStorage.NOME_USUARIO;
   var grupo_muscular = 0;
   var cadastrado = 0;
+  b_usuario.innerHTML = nomeUsuario;
 
 function gostei(checkbox){
   grupo_muscular = Number(checkbox.value);
