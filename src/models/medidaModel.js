@@ -1,8 +1,8 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+function buscarUltimasMedidas() {
 
-    var instrucaoSql = `select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as dscurtidas from grupo_muscular
+    var instrucaoSql = `select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
     join curtida on fkgrupo = idgrupo
     where fkGrupo = 1
     group by curtida.fkgrupo `;
@@ -11,7 +11,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
+function buscarMedidasEmTempoReal(fkGrupo) {
 
     var instrucaoSql = `SELECT 
         dht11_temperatura as temperatura, 
