@@ -17,14 +17,11 @@ function buscarUltimasMedidas(req, res) {
     });
 }
 
+function buscarTriceps(req, res) {
 
-function buscarMedidasEmTempoReal(req, res) {
+    // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    // var idAquario = req.params.idAquario;
-
-    console.log(`Recuperando medidas em tempo real`);
-
-    medidaModel.buscarMedidasEmTempoReal().then(function (resultado) {
+    medidaModel.buscarTriceps().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -37,8 +34,98 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+function buscarBiceps(req, res) {
+
+    // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+
+    medidaModel.buscarBiceps().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function buscarPosterior(req, res) {
+
+    // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+
+    medidaModel.buscarPosterior().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function buscarQuadriceps(req, res) {
+
+    // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+
+    medidaModel.buscarQuadriceps().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function buscarPeitoral(req, res) {
+
+    // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+
+    medidaModel.buscarPeitoral().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function buscarDorsal(req, res) {
+
+    // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+
+    medidaModel.buscarDorsal().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarTriceps,
+    buscarBiceps,
+    buscarQuadriceps,
+    buscarPosterior,
+    buscarPeitoral,
+    buscarDorsal
 }

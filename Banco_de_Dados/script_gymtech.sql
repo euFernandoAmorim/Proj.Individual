@@ -39,7 +39,9 @@ insert into usuario values
 (1, 'Fer', 'fernando@gmail.com', '020312', '2005-10-02'),
 (2, 'teste', 'teste@gmail.com', '123456', '2005-10-02'),
 (3, 'teste2', 'teste2@gmail.com', '123456', '2005-10-02'),
-(4, 'teste3', 'teste3@gmail.com', '123456', '2005-10-02');
+(4, 'teste3', 'teste3@gmail.com', '123456', '2005-10-02'),
+(5, 'teste4', 'teste4@gmail.com', '123456', '2005-10-02'),
+(6, 'teste5', 'teste5@gmail.com', '123456', '2005-10-02');
 
 insert into grupo_muscular
 values
@@ -48,8 +50,7 @@ values
 (3, 'Quadríceps'),
 (4, 'Posterior'),
 (5, 'Bíceps'),
-(6, 'Tríceps'),
-(7, 'Glúteos');
+(6, 'Tríceps');
 
 create table curtida
 (fkUsuario int,
@@ -61,21 +62,44 @@ foreign key (fkUsuario) references usuario (id),
 foreign key (fkGrupo) references grupo_muscular (idGrupo));
 
 insert into curtida values
-(1, 1, 1, 0),
-(2, 1, 0, 1),
-(3, 1, 1, 0),
-(4, 1, 1, 0);
+(1, 1, 1, null),
+(2, 1, null, 1),
+(3, 1, 1, null),
+(4, 1, null, 1),
+(5, 1, 1, null),
+(6, 1, 1, 1),
+(1, 2, null, 1),
+(2, 2, 1, 1),
+(3, 2, 1, null),
+(4, 2, 1, 1),
+(5, 2, 1, null),
+(6, 3, 1, null),
+(1, 3, null, 1),
+(2, 3, 1, null),
+(3, 3, null, 1),
+(4, 3, null, 1),
+(5, 4, 1, 1),
+(6, 4, 1, 1),
+(1, 4, null, 1),
+(2, 4, 1, 1),
+(3, 4, 1, null),
+(4, 5, 1, 1),
+(5, 5, 1,null),
+(6, 5, null, 1),
+(1, 5, 1, null),
+(2, 5, 1, 1),
+(3, 6, 1, null),
+(4, 6, 1, 1),
+(5, 6, null, 1),
+(6, 6, 1, 1),
+(1, 6, 1, 1),
+(2, 6, 1, null);
+
 
 select * from curtida;
 truncate table curtida;
 
 select * from grupo_muscular;
-
-insert into usuario values
-(6, 'teste5', 'teste5@gmail.com', '123456', '2005-10-02');
-
-insert into curtida values
-(1, 3, null, 1);
 
 select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as dscurtidas from grupo_muscular
 join curtida on fkgrupo = idgrupo
@@ -84,6 +108,3 @@ group by curtida.fkgrupo;
 select curtida.fkUsuario, curtida.fkGrupo from curtida
 join usuario on fkusuario = id where id = 1;
 
-update curtida set curtir = null where fkusuario = 1 and fkgrupo = 1;
-
-truncate table curtida;
