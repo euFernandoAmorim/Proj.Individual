@@ -63,7 +63,6 @@ body {
     height: 100%;
     width: 90%;
     margin: auto;
-    border-bottom: 3px solid whitesmoke;
 }
 
 .header .container{
@@ -92,7 +91,7 @@ body {
     color: white;
     height: 500px;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(160deg, #000, #000, #000, #000);
 }
 
 .slogan{
@@ -156,43 +155,69 @@ body {
 }
 
 .social {
-    height: 500px;
-    background: black;
+    background: white;
     padding: 40px 20px 30px 10px;
 }
 
-.social .card {
+.social .container{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 300px;
-    height: 350px;
-    text-align: center; 
-    transform: 0.4;
+    flex-direction: column;
+    background-color: black;
     border-radius: 20px;
-    border: 3px solid white;
     color: white;
-    background-color: darkred;
+    font-family: Poppins, sans-serif;
 }
 
-
-
-.card:hover{
-    transform: scale3d(1.1, 1.1, 1);
+.icone{
+    background-image: url(https://i.pinimg.com/564x/a6/fa/e7/a6fae7d7984b7c42512057e7f517ec21.jpg);
+    background-position: center left;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+    margin-right: 60px;
+    border-radius: 20px;
 }
 
-.social .card img {
-    width: 150px;
+.icone2{
+    background-image: url(https://i.pinimg.com/564x/31/cb/b4/31cbb4203567636b09f5cf23f8ef2bc3.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+    margin-left: 60px;
+    border-radius: 20px;
 }
 
-.social .card h4 {
-    font-size: 24px;
+.icone3{
+    background-image: url(https://i.pinimg.com/564x/da/11/08/da1108b2a7f3ba0188e4dbeaed32c2df.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+    margin-right: 60px;
+    border-radius: 20px;
+    margin-bottom: 40px;
 }
 
-.social .container {
+.beneficio{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    margin-bottom: 30px;
 }
+
+.conteudo{
+    width: 500px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteudo h2{
+   text-align: center;
+}
+
 
 .footer {
     height: 100px;
