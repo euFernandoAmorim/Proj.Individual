@@ -8,59 +8,75 @@ body {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.452);   
+  backdrop-filter: blur(8px);
+  position: fixed;
+  z-index: 10000;
+}
+
+.top{
+  width: 100%;
+  height: 90px;
+  background-color: #161618;
+}
+
+.fernando h3{
+  color: white;
+  margin-top: 25px;
+}
+
+.header a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  transition: 0.5s;
+}
+
+.header a:hover {
+  /*Mudança de cor quando passar o mouse em cima dos links do Header*/
+  color: #ad0303;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  transition: 0.5s;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.header .container{
+  height: 75px;
+  justify-content: space-between;
+  border-bottom: 3px solid #ad0303;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 500px;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
 .label-captura {
   display: flex;
   justify-content: center;
 }
 
-.dash-right .avisos {
-  width: 100%;
-  color: rgb(216, 216, 216);
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-.dash-right .avisos .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dash-right .avisos .container .div-form {
-  width: 95%;
-}
-
-.dash-right .avisos .container .div-form #form_postagem {
-  width: 95%;
-}
-
-.dash-right .avisos .div-form label {
-  width: 95%;
-}
-
-.dash-right .avisos .div-form input {
-  width: 95%;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form textarea {
-  width: 95%;
-  border: 3px solid #e6005a;
-  background-color: white;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form button {
-  cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
-}
 
 .publicacao-btn-editar {
   cursor: pointer;
@@ -111,18 +127,18 @@ body {
 
 /* pagina graficos */
 
-.dash-header {
-  background-color: #212124;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .dash {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   position: relative;
   top: 0;
-  left: 20%;
   background-color: #161618;
   height: 100vh;
   overflow: auto;
@@ -450,30 +466,7 @@ canvas {
 
 /* PAGINA DOS GRÁFICOS 2023 */
 
-.janela {
-  display: flex;
-  /* width: 100vw; */
-}
 
-.header-left a {
-  text-decoration: none;
-  color: white;
-}
-
-.header-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
-}
 
 .dash-right {
   display: flex;
@@ -507,45 +500,26 @@ canvas {
   font-weight: 800;
 }
 
-.btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
-  margin: 0;
-}
-
-.btn-nav h3,
-.btn-logout h3 {
-  margin: 0;
-  padding: 0;
-}
 
 .btn-logout {
   margin: 0;
+  margin-top: 27px;
   padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
+  width: 60px;
+  height: 25px;
+  background-color: #ad0303;
   color: white;
   border-radius: 10px;
   text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
   cursor: pointer;
+  font-size: 18px;
+}
+
+.fernando {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 160px;
+  display: flex;
+  flex-direction: row;
 }

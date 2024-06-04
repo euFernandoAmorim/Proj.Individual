@@ -28,44 +28,36 @@
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body>
+    <div class="header">
+        <div  class="container">
 
-    <div class="janela">
-        <div class="header-left">
-            <h1>GymTech</h1>
+            <div class="fernando">
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+             <button class="btn-logout" onclick="limparSessao()">Sair</button>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Exercícios</h3>
-                </a>
-            </div>
+             <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
 
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
 
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+            <ul class="navbar"> 
+                <a href="./cards.html">Exercícios</a>
+           
+                <a href="./dashboard.html">Gráficos</a>
+           
+                <a href="./mural.html">Fórum</a>
+             
+            </ul>
         </div>
+    </div>
 
+    <div class="top"></div>
+    
         <div class="dash" style="height: 650px;">
             <div id="alerta">
             </div>
 
-            <h1 style="color:#fff;">Dashboard</h1>
+            <h1 style="color:#fff;">Visão Geral das curtidas</h1>
 
             <div id="grafico_musculos">
            

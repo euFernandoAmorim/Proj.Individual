@@ -20,38 +20,30 @@
 
 <body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
 
-    <div class="janela">
-
-
-        <div class="header-left">
-
-            <h1>GymTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    <div class="header">
+        <div  class="container">
+    
+            <div class="fernando">
+    
+             <button class="btn-logout" onclick="limparSessao()">Sair</button>
+    
+             <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    
+    
             </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+    
+            <ul class="navbar"> 
+                <a href="./cards.html">Exercícios</a>
+           
+                <a href="./dashboard.html">Gráficos</a>
+           
+                <a href="./mural.html">Fórum</a>
+             
+            </ul>
         </div>
+    </div>
+    
+    <div class="top"></div>
 
         <div class="dash-right">
 
