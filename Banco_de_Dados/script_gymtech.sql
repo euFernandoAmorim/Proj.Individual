@@ -9,20 +9,6 @@ email varchar(45),
 senha varchar(45),
 dtnasc date);
 
-create table musculo
-(idmusculo int primary key auto_increment,
-nome varchar(45),
-regiao varchar(45),
-fkusuario int,
-foreign key fkMusculoUsuario (fkusuario) references usuario (id));
-
-create table exercicio 
-(idexercicio int primary key auto_increment,
-nome varchar(45),
-descricao varchar(100),
-fkmusculo int, 
-foreign key fkExercicioMusculo (fkmusculo) references musculo (idmusculo));
-
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
@@ -52,14 +38,33 @@ values
 (5, 'Bíceps'),
 (6, 'Tríceps');
 
+create table exercicio
+(idExercicio int primary key auto_increment,
+nome varchar(45));
+
+create table treino 
+(idTreino int primary key auto_increment,
+nome varchar(45),
+fkGrupo int,
+foreign key (fkGrupo) references grupo_muscular (idgrupo));
+
+create table exercicios_do_treino
+(fktreino int,
+fkexercicio int,
+primary key (fkexercicio, fktreino),
+foreign key (fktreino) references treino (idtreino),
+foreign key (fkexercicio) references exercicio (idexercicio));
+
 create table curtida
 (fkUsuario int,
 fkGrupo int,
+fkTreino int,
 curtir int,
 descurtir int,
-primary key (fkUsuario, fkGrupo),
+primary key (fkUsuario, fkGrupo, fkTreino),
 foreign key (fkUsuario) references usuario (id),
-foreign key (fkGrupo) references grupo_muscular (idGrupo));
+foreign key (fkGrupo) references grupo_muscular (idGrupo),
+foreign key (fkTreino) references treino (idtreino));
 
 insert into curtida values
 (1, 1, 1, null),
