@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
 body {
     margin: 0;
@@ -41,6 +42,37 @@ body {
      left: 30px;
   }
 
+  .botao_login{
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ad0303;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #ad0303;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #ad0303;
+  }
+
+  .botao_login:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #ad0303;
+  }
+  
+  .botao_login:active {
+    transform: scale(0.9);
+  }
+
+  .botao_login a{
+    color: rgb(219, 219, 0);
+  }
+
 .header a{
     color: white;
     text-decoration: none;
@@ -71,10 +103,6 @@ body {
     border-bottom: 3px solid #ad0303;
 }
 
-.titulo {
-    color: red;
-}
-
 .navbar {
     display: flex;
     flex-direction: row;
@@ -101,6 +129,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .slogan .logo{
@@ -115,14 +144,6 @@ body {
     left: 30px;
 }
 
-.slogan button{
-    background-color: black;
-    color: yellow;
-    border-color: red;
-    height: 40px;
-    width: 160px;
-    font-size: 125%;
-}
 
 .slogan h2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -155,69 +176,146 @@ body {
 }
 
 .social {
-    background: white;
+    background-color: #00000044;
     padding: 40px 20px 30px 10px;
+    color: black;
 }
 
 .social .container{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: black;
-    border-radius: 20px;
-    color: white;
-    font-family: Poppins, sans-serif;
+    font-family: Candara;
+    margin-bottom: 50px;
 }
 
-.icone{
-    background-image: url(https://i.pinimg.com/564x/a6/fa/e7/a6fae7d7984b7c42512057e7f517ec21.jpg);
-    background-position: center left;
-    background-size: cover;
-    width: 500px;
-    height: 400px;
-    margin-right: 60px;
-    border-radius: 20px;
+.social .container h1{
+    font-size: 40px;
+    font-family: Candara;
+    margin-bottom: 70px;
 }
 
-.icone2{
-    background-image: url(https://i.pinimg.com/564x/31/cb/b4/31cbb4203567636b09f5cf23f8ef2bc3.jpg);
-    background-position: center top;
-    background-size: cover;
-    width: 500px;
-    height: 400px;
-    margin-left: 60px;
-    border-radius: 20px;
+.social .container span{
+    font-family: Baskerville;
+    font-size: 20px;
 }
 
-.icone3{
-    background-image: url(https://i.pinimg.com/564x/da/11/08/da1108b2a7f3ba0188e4dbeaed32c2df.jpg);
-    background-position: center top;
-    background-size: cover;
-    width: 500px;
-    height: 400px;
-    margin-right: 60px;
-    border-radius: 20px;
-    margin-bottom: 40px;
+.por_que{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 70%;
 }
 
 .beneficio{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
     text-align: center;
-    margin-bottom: 30px;
+    font-size: larger;
+    width: 300px;
+    height: 300px;
+    background-color: #00000044;
+    border: 3px solid rgb(212, 14, 14);
+    border-radius: 20px;
 }
 
-.conteudo{
-    width: 500px;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
+.beneficio img{
+    width: 120px;
 }
 
-.conteudo h2{
-   text-align: center;
+.beneficios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
+
+.modalidades{
+    height: 800px;
+    background-image: url("fundo.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: Candara;
+}
+
+.escuro{
+    height: 100%;
+    width: 100%;
+    background-color: #000000af;
+}
+
+.modalidades .container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.treinos{
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.treino{
+    width: 400px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.linhas{
+    width: 1000px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.linha{
+    width: 220px;
+    height: 5px;
+    background-color: #8f0505;
+}
+
+.numero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #570404;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 1px solid wheat;
+}
+
+.linha_cima{
+    margin-top: -80px;
+    width: 5px;
+    height: 80px;
+    background-color: #8f0505;
+}
+
+.linha_baixo{
+    margin-bottom: -80px;
+    width: 5px;
+    height: 80px;
+    background-color: #8f0505;
+}
+
+.num{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .footer {
     height: 100px;
