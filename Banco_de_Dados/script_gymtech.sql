@@ -1,5 +1,5 @@
 create database gymtech;
-
+drop database gymtech;
 use gymtech;
 
 create table usuario 
@@ -44,11 +44,9 @@ nome varchar(45));
 
 create table treino 
 (idTreino int primary key auto_increment,
-nome varchar(45),
-fkGrupo int,
-foreign key (fkGrupo) references grupo_muscular (idgrupo));
+nome varchar(45));
 
-create table exercicios_do_treino
+create table combinacao
 (fktreino int,
 fkexercicio int,
 primary key (fkexercicio, fktreino),
@@ -100,11 +98,98 @@ insert into curtida values
 (1, 6, 1, 1),
 (2, 6, 1, null);
 
+drop table combinacao;
+drop table treino;
+drop table exercicio;
+drop table curtida;
 
-select * from curtida;
+insert into treino values
+(default, 'Dorsal 1'),
+(default, 'Dorsal 2'),
+(default, 'Dorsal 3'),
+(default, 'Peitoral 1'),
+(default, 'Peitoral 2'),
+(default, 'Peitoral 3'),
+(default, 'Quadríceps 1'),
+(default, 'Quadríceps 2'),
+(default, 'Quadríceps 3'),
+(default, 'Posterior 1'),
+(default, 'Posterior 2'),
+(default, 'Bíceps 1'),
+(default, 'Bíceps 2'),
+(default, 'Bíceps 3'),
+(default, 'Tríceps 1'),
+(default, 'Tríceps 2');
+
+insert into exercicio values
+(default, 'puxada aberta'),
+(default, 'puxada triângulo'),
+(default, 'remada baixa unilateral'),
+(default, 'remada curvada'),
+(default, 'remada cavalinho'),
+(default, 'pull down'),
+(default, 'puxada baixa pegada aberta'),
+(default, 'serrote'),
+(default, 'Supino reto barra'), 
+(default, 'Supino reto halteres'), 
+(default, 'Supino inclinado barra'),
+(default, 'Supino inclinado halteres'),
+(default, 'Supino declinado halteres'),
+(default, 'Crusifixo'),
+(default, 'Crusifixo inclinado'),
+(default, 'Crossover Polia Baixa'),
+(default, 'Crossover Polia Alta'),
+(default, 'extensora'), 
+(default, 'agachamento livre'), 
+(default, 'leg press 45'), 
+(default, 'leg press horizontal'), 
+(default, 'agachamento bulgaro'), 
+(default, 'afundo'), 
+(default, 'cadeira abdutora'),
+(default, 'stiff'), 
+(default, 'mesa flexora'), 
+(default, 'cadeira flexora'), 
+(default, 'elevação pélvica'), 
+(default, 'cadeira adutora'), 
+(default, 'terra sumô'),
+(default, 'Rosca direta barra W'),
+(default, 'Rosca Scott'),
+(default, 'Rosca 45'),
+(default, 'Rosca martelo'),
+(default, 'Rosca direta com halteres'),
+(default, 'Rosca 21'),
+(default, 'tríceps corda'),
+(default, 'tríceps francês'),
+(default, 'tríceps testa na polia'),
+(default, 'tríceps testa com barra'),
+(default, 'parelela máquina'),
+(default, 'coice');
+
+insert into combinacao values
+(1, 4), (1, 8), (1, 3), (1, 5),
+(2, 1), (2, 3), (2, 6), (2, 8),
+(3, 4), (3, 2), (3, 1), (3, 7),
+(4, 12), (4, 9), (4, 16), (4, 15),
+(5, 10), (5, 11), (5, 18), (5, 17),
+(6, 11), (6, 10), (6, 15), (6, 17),
+(7, 19), (7, 20), (7, 21), (7, 23),
+(8, 22), (8, 19), (8, 24), (8, 25),
+(9, 20), (9, 21), (9, 25), (9, 24),
+(10, 30), (10, 28), (10, 27), (10, 29),
+(11, 25), (11, 26), (11, 27), (11, 29),
+(12, 31), (12, 32), (12, 33), (12, 34),
+(13, 35), (13, 34), (13, 33), (13, 32),
+(14, 34), (14, 35), (14, 33), (14, 36),
+(15, 37), (15, 39), (15, 38), 
+(16, 40), (16, 42), (16, 41);
+
 truncate table curtida;
-
+select * from exercicio;
+select * from curtida;
+select * from usuario;
 select * from grupo_muscular;
+select * from treino;
+select * from combinacao;
 
 select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as dscurtidas from grupo_muscular
 join curtida on fkgrupo = idgrupo

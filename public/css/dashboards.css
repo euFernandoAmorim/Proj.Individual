@@ -14,9 +14,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.452);   
+  background-color: rgb(0, 0, 0);   
   backdrop-filter: blur(8px);
-  position: fixed;
   z-index: 10000;
 }
 
@@ -140,7 +139,6 @@ body {
   position: relative;
   top: 0;
   background-color: #161618;
-  height: 1000px;
   overflow: auto;
 }
 
@@ -154,17 +152,7 @@ body {
   margin-top: 20px;
 }
 
-.titulo {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  background-color: #212124;
-  border: 2px solid #ad0303;
-  width: 575px;
-  height: 100px;
-}
-
-.titulo .titulo-legenda {
+.titulo-legenda {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,9 +164,8 @@ body {
 }
 
 .exercicios{
-  margin-top: 75px;
   width: 100%;
-  height: 900px;
+  height: 450px;
   border-radius: 10px;
 }
 
@@ -201,108 +188,78 @@ body {
 .cards .card{
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 400px;
-  height: 300px;
-}
-
-.descricao {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 200px;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  border-radius: 8px;
-  color: white;
-  overflow: hidden;
-  position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  cursor: pointer;
-}
-
-.descricao img{
-  width: 250px;
-  height: 125px;
-  border: 3px solid black;
-  border-radius: 0px 8px 0px 8px;
-}
-
-.card-content {
-  padding: 20px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  gap: 10px;
-  color: white;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  height: 100%;
-  margin-left: 100px;
+  width: 300px;
+  height: 300px;
+  font-size: 20px;
 }
 
-.card-content .card-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: inherit;
-  text-transform: uppercase;
+.card_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  background-color: #000;
+  border-radius: 8px;
+
+  position: relative;
+  background: #181818;
+  background: linear-gradient(137deg, rgb(255, 0, 179) 0%, rgba(0,212,255,1) 100%);
+  transition: 0.3s ease;
+  border-radius: 30px;
+  filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 0.5));
 }
 
-.card-content .card-para {
-  color: inherit;
-  opacity: 0.8;
-  font-size: 14px;
-}
-
-.descricao:hover {
-  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.descricao:before {
-  content: "";
+.card_content::after {
+  content: '';
+  background-color: #181818;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 100;
+  transition: 0.3s ease;
+  height: 98%;
+  width: 98%;
+  top: 1%;
+  left: 1%;
+  border-radius: 28px;
+}
+
+.descricao::after{
+  content: '';
   z-index: 1;
+  position: relative;
+  height: 98%;
+  width: 98%;
 }
 
-.descricao:hover:before {
-  transform: translateX(-100%);
+.card_content:hover {
+  filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 1));
 }
 
-.descricao:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  z-index: 1;
+.descricao{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
 }
 
-.descricao:hover:after {
-  transform: translateX(100%);
+.title{
+  font-family: Baskerville;
+  font-size: 30px;
+}
+
+.texto{
+  font-family: candara;
 }
 
 
 .likes{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center ;
-  background-color: #212124;
+  background-color: #000;
   border-radius: 20px;margin-top: 5px;
 
 }
