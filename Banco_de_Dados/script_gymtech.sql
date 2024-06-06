@@ -191,9 +191,13 @@ select * from grupo_muscular;
 select * from treino;
 select * from combinacao;
 
-select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as dscurtidas from grupo_muscular
+select grupo_muscular.nome as treino, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
 join curtida on fkgrupo = idgrupo
 group by curtida.fkgrupo;
+
+select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+join treino on fktreino = idtreino
+group by curtida.fkgrupo, fktreino;
 
 select curtida.fkUsuario, curtida.fkGrupo from curtida
 join usuario on fkusuario = id where id = 1;
