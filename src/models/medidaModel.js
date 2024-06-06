@@ -15,10 +15,10 @@ function buscarUltimasMedidas() {
 function buscarTriceps() {
 
     var instrucaoSql = `
-    select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
-    join curtida on fkgrupo = idgrupo
-    where idgrupo = 6
-    group by curtida.fkgrupo;
+    select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 6
+    group by curtida.fkgrupo, fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -28,10 +28,10 @@ function buscarTriceps() {
 function buscarBiceps() {
 
     var instrucaoSql = `
-    select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
-    join curtida on fkgrupo = idgrupo
-    where idgrupo = 5
-    group by curtida.fkgrupo;
+    select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 5
+    group by curtida.fkgrupo, fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -41,10 +41,10 @@ function buscarBiceps() {
 function buscarPosterior() {
 
     var instrucaoSql = `
-    select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
-    join curtida on fkgrupo = idgrupo
-    where idgrupo = 4
-    group by curtida.fkgrupo;
+    select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 4
+    group by curtida.fkgrupo, fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -54,11 +54,11 @@ function buscarPosterior() {
 function buscarQuadriceps() {
 
     var instrucaoSql = `
-    select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
-    join curtida on fkgrupo = idgrupo
-    where idgrupo = 3
-    group by curtida.fkgrupo;
-     `;
+    select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 3
+    group by curtida.fkgrupo, fktreino;
+        `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -67,10 +67,10 @@ function buscarQuadriceps() {
 function buscarPeitoral() {
 
     var instrucaoSql = `
-    select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
-    join curtida on fkgrupo = idgrupo
-    where idgrupo = 2
-    group by curtida.fkgrupo;
+    select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 2
+    group by curtida.fkgrupo, fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -80,10 +80,10 @@ function buscarPeitoral() {
 function buscarDorsal() {
 
     var instrucaoSql = `
-    select grupo_muscular.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from grupo_muscular
-    join curtida on fkgrupo = idgrupo
-    where idgrupo = 1
-    group by curtida.fkgrupo;
+    select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 1
+    group by curtida.fkgrupo, fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

@@ -26,7 +26,7 @@
 
         <div class="fernando">
 
-         <button class="btn-logout" onclick="limparSessao()">Sair</button>
+         <button class="btn-logout" onclick="voltar()">Voltar</button>
 
          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
 
@@ -34,7 +34,7 @@
         </div>
 
         <ul class="navbar"> 
-            <a href="./cards.html">Exercícios</a>
+            <a href="./grupo_muscular.html">Exercícios</a>
        
             <a href="./dashboard.html">Gráficos</a>
        
@@ -44,209 +44,101 @@
     </div>
 </div>
 
-<div class="top"></div>
-
         <div class="dash">
             <div id="alerta">
             </div>
 
             <div class="biblioteca">
-                <div class="titulo">
                 <p class="titulo-legenda">
-                Biblioteca de Exercícios
+                Quadríceps
                 </p>
             </div>
+
+  <div class="exercicios">
+
+            <div class="cards">
+              <div class="card">
+              <div class="card_content">
+              <div class="descricao">
+
+                      <p class="title">Treino 1</p>
+                      <p class="texto"> • Remada Curvada<br> • Serrote<br> • Remada Baixa Unilateral<br>
+                        • Remada Cavalinho</p>
+
+              </div>  
             </div>
-
-            <div class="exercicios">
-
-             <div class="grupo-muscular">
-
-                    <h1>Dorsal</h1> 
-
-                <div class="cards">
-                  <div class="card">
-                    <img src="imgs_exercicios/puxa_aberta.jpg" alt="">
-                    <div class="card-content">
-                      <p class="card-title">Card hover effect
-                      </p><p class="card-para">Lorem ipsum dolor sit 
-                        amet, consectetur adipiscing elit.</p>
-                    </div>
-                  </div>  
-            </div>
-
             <div class="likes">
 
             <label class="container-like">
-              <input onclick="gostei(this)" value="1" type="checkbox">
+              <input onclick="gostei(this)" value="7" type="checkbox">
               <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
 
             </label>
 
             <label class="container-deslike">
-              <input onclick="nao_gostei(this)" value="1" type="checkbox">
+              <input onclick="nao_gostei(this)" value="7" type="checkbox">
               <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
             </label>
           </div>
-
-        </div>
-
-       
-                <div class="grupo-muscular">
-
-                    <h1>Peitoral</h1> 
-
-                <div class="cards">
-                  <div class="card">
-                    <img src="imgs_exercicios/puxa_aberta.jpg" alt="">
-                    <div class="card-content">
-                      <p class="card-title">Card hover effect
-                      </p><p class="card-para">Lorem ipsum dolor sit 
-                        amet, consectetur adipiscing elit.</p>
-                    </div>
-                  </div>  
-            </div>
-
-            <div class="likes">
-
-            <label class="container-like">
-              <input onclick="gostei(this)" value="2" type="checkbox">
-              <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
-
-            </label>
-
-            <label class="container-deslike">
-              <input onclick="nao_gostei(this)" value="2" type="checkbox">
-              <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-            </label>
-          </div>
-
         </div>
 
 
-        <div class="grupo-muscular">
-
-          <h1>Quadríceps</h1> 
-
-      <div class="cards">
         <div class="card">
-          <img src="imgs_exercicios/puxa_aberta.jpg" alt="">
-          <div class="card-content">
-            <p class="card-title">Card hover effect
-            </p><p class="card-para">Lorem ipsum dolor sit 
-              amet, consectetur adipiscing elit.</p>
+          <div class="card_content">
+          <div class="descricao">
+
+                  <p class="title">Treino 2</p>
+                  <p class="texto"> • Remada Curvada<br> • Serrote<br> • Remada Baixa Unilateral<br>
+                    • Remada Cavalinho</p>
+
+          </div>  
+        </div>
+        <div class="likes">
+
+        <label class="container-like">
+          <input onclick="gostei(this)" value="8" type="checkbox">
+          <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
+
+        </label>
+
+        <label class="container-deslike">
+          <input onclick="nao_gostei(this)" value="8" type="checkbox">
+          <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
+        </label>
+      </div>
+    </div>
+
+
+         <div class="card">
+              <div class="card_content">
+              <div class="descricao">
+
+                      <p class="title">Treino 3</p>
+                      <p class="texto"> • Remada Curvada<br> • Serrote<br> • Remada Baixa Unilateral<br>
+                        • Remada Cavalinho</p>
+
+              </div>  
+            </div>
+            <div class="likes">
+
+            <label class="container-like">
+              <input onclick="gostei(this)" value="9" type="checkbox">
+              <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
+
+            </label>
+
+            <label class="container-deslike">
+              <input onclick="nao_gostei(this)" value="9" type="checkbox">
+              <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
+            </label>
           </div>
-        </div>  
-  </div>
-
-  <div class="likes">
-
-  <label class="container-like">
-    <input onclick="gostei(this)" value="3" type="checkbox">
-    <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
-
-  </label>
-
-  <label class="container-deslike">
-    <input onclick="nao_gostei(this)" value="3" type="checkbox">
-    <svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-  </label>
-</div>
+        </div>
 
 </div>
 
-<div class="grupo-muscular">
-
-  <h1>Posterior</h1> 
-
-<div class="cards">
-<div class="card">
-  <img src="imgs_exercicios/puxa_aberta.jpg" alt="">
-  <div class="card-content">
-    <p class="card-title">Card hover effect
-    </p><p class="card-para">Lorem ipsum dolor sit 
-      amet, consectetur adipiscing elit.</p>
-  </div>
-</div>  
-</div>
-
-<div class="likes">
-
-<label class="container-like">
-<input onclick="gostei(this)" value="4" type="checkbox">
-<svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
-
-</label>
-
-<label class="container-deslike">
-<input onclick="nao_gostei(this)" value="4" type="checkbox">
-<svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-</label>
-</div>
 
 </div>
-
-<div class="grupo-muscular">
-
-  <h1>Bíceps</h1> 
-
-<div class="cards">
-<div class="card">
-  <img src="imgs_exercicios/puxa_aberta.jpg" alt="">
-  <div class="card-content">
-    <p class="card-title">Card hover effect
-    </p><p class="card-para">Lorem ipsum dolor sit 
-      amet, consectetur adipiscing elit.</p>
-  </div>
-</div>  
-</div>
-
-<div class="likes">
-
-<label class="container-like">
-<input onclick="gostei(this)" value="5" type="checkbox">
-<svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
-
-</label>
-
-<label class="container-deslike">
-<input onclick="nao_gostei(this)" value="5" type="checkbox">
-<svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-</label>
-</div>
-
-</div>
-
-<div class="grupo-muscular">
-
-  <h1>Tríceps</h1> 
-
-<div class="cards">
-<div class="card">
-  <img src="imgs_exercicios/puxa_aberta.jpg" alt="">
-  <div class="card-content">
-    <p class="card-title">Card hover effect
-    </p><p class="card-para">Lorem ipsum dolor sit 
-      amet, consectetur adipiscing elit.</p>
-  </div>
-</div>  
-</div>
-
-<div class="likes">
-
-<label class="container-like">
-<input onclick="gostei(this)" value="6" type="checkbox">
-<svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M29.845,17.099l-2.489,8.725C26.989,27.105,25.804,28,24.473,28H11c-0.553,0-1-0.448-1-1V13  c0-0.215,0.069-0.425,0.198-0.597l5.392-7.24C16.188,4.414,17.05,4,17.974,4C19.643,4,21,5.357,21,7.026V12h5.002  c1.265,0,2.427,0.579,3.188,1.589C29.954,14.601,30.192,15.88,29.845,17.099z" id="XMLID_254_"></path><path d="M7,12H3c-0.553,0-1,0.448-1,1v14c0,0.552,0.447,1,1,1h4c0.553,0,1-0.448,1-1V13C8,12.448,7.553,12,7,12z   M5,25.5c-0.828,0-1.5-0.672-1.5-1.5c0-0.828,0.672-1.5,1.5-1.5c0.828,0,1.5,0.672,1.5,1.5C6.5,24.828,5.828,25.5,5,25.5z" id="XMLID_256_"></path></svg>
-
-</label>
-
-<label class="container-deslike">
-<input onclick="nao_gostei(this)" value="6" type="checkbox">
-<svg id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-</label>
-</div>
-
-</div>
+       
 
 </body>
 
@@ -254,12 +146,17 @@
   var curtir = 1;
   var idUsuario = sessionStorage.ID_USUARIO;
   var nomeUsuario = sessionStorage.NOME_USUARIO;
-  var grupo_muscular = 0;
+  var grupo_muscular = 1;
+  var treino = 0;
   var cadastrado = 0;
   b_usuario.innerHTML = nomeUsuario;
 
+  function voltar(){
+    window.location.href = "grupo_muscular.html";
+  }
+
 function gostei(checkbox){
-  grupo_muscular = Number(checkbox.value);
+  treino = Number(checkbox.value);
 
   fetch("/curtir/verificar_curtidas", {
             method: "POST",
@@ -268,7 +165,8 @@ function gostei(checkbox){
             },
             body: JSON.stringify({
               idUsuarioServer : idUsuario,
-              grupo_muscularServer: grupo_muscular
+              grupo_muscularServer: grupo_muscular,
+              treinoServer: treino
             })
         }).then(function (resposta){
 
@@ -281,8 +179,9 @@ function gostei(checkbox){
             if (json.resultado_verificar_curtidas != undefined && json.resultado_verificar_curtidas.length > 0) {
               var usuario = (json.resultado_verificar_curtidas[0]).usuario;
               var grupo = (json.resultado_verificar_curtidas[0]).grupo;
+              var treininho = (json.resultado_verificar_curtidas[0]).treino;
 
-              if((usuario == idUsuario) && (grupo == grupo_muscular)){
+              if((usuario == idUsuario) && (grupo == grupo_muscular) && (treininho == treino)){
                 
                 if (checkbox.checked){
                 fetch("/curtir/atualizar", {
@@ -295,7 +194,8 @@ function gostei(checkbox){
                     // Agora vá para o arquivo routes/curtir.js
                     curtirServer: curtir,
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
                   }),
                 })
               }else{
@@ -308,7 +208,8 @@ function gostei(checkbox){
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/curtir.js
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -325,7 +226,8 @@ function gostei(checkbox){
                     // Agora vá para o arquivo routes/curtir.js
                     curtirServer: curtir,
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -340,7 +242,8 @@ function gostei(checkbox){
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/curtir.js
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -359,7 +262,8 @@ function gostei(checkbox){
                     // Agora vá para o arquivo routes/curtir.js
                     curtirServer: curtir,
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -371,7 +275,7 @@ function gostei(checkbox){
 
 
   function nao_gostei(checkbox){
-  grupo_muscular = Number(checkbox.value);
+  treino = Number(checkbox.value);
 
   fetch("/curtir/verificar_curtidas", {
             method: "POST",
@@ -380,7 +284,8 @@ function gostei(checkbox){
             },
             body: JSON.stringify({
               idUsuarioServer : idUsuario,
-              grupo_muscularServer: grupo_muscular
+              grupo_muscularServer: grupo_muscular,
+              treinoServer: treino
             })
         }).then(function (resposta){
 
@@ -393,8 +298,9 @@ function gostei(checkbox){
             if (json.resultado_verificar_curtidas != undefined && json.resultado_verificar_curtidas.length > 0) {
               var usuario = (json.resultado_verificar_curtidas[0]).usuario;
               var grupo = (json.resultado_verificar_curtidas[0]).grupo;
+              var treininho = (json.resultado_verificar_curtidas[0]).treino;
 
-              if((usuario == idUsuario) && (grupo == grupo_muscular)){
+              if((usuario == idUsuario) && (grupo == grupo_muscular) && (treininho == treino)){
                 
                 if (checkbox.checked){
                 fetch("/curtir/atualizar_descurtir", {
@@ -407,7 +313,8 @@ function gostei(checkbox){
                     // Agora vá para o arquivo routes/curtir.js
                     curtirServer: curtir,
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
                   }),
                 })
               }else{
@@ -420,7 +327,8 @@ function gostei(checkbox){
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/curtir.js
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -437,7 +345,8 @@ function gostei(checkbox){
                     // Agora vá para o arquivo routes/curtir.js
                     curtirServer: curtir,
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -452,7 +361,8 @@ function gostei(checkbox){
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/curtir.js
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
@@ -471,7 +381,8 @@ function gostei(checkbox){
                     // Agora vá para o arquivo routes/curtir.js
                     curtirServer: curtir,
                     idUsuarioServer : idUsuario,
-                    grupo_muscularServer: grupo_muscular
+                    grupo_muscularServer: grupo_muscular,
+                    treinoServer: treino
 
                   }),
                 })
