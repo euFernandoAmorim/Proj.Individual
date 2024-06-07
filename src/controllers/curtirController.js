@@ -37,7 +37,7 @@ function cadastrar(req, res) {
         var idUsuario = req.body.idUsuarioServer;
         var grupo_muscular = req.body.grupo_muscularServer;
         var treino = req.body.treinoServer;
-
+        console.log('estou no contreoller' + idUsuario + grupo_muscular + treino);
         curtirModel.verificar_curtidas(idUsuario, grupo_muscular, treino)
         .then(
             function (resultado_verificar_curtidas) {

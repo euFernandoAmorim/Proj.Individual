@@ -29,6 +29,7 @@ function cadastrar_descurtir(curtir, idUsuario, grupo_muscular, treino) {
 }
 
 function verificar_curtidas(idUsuario, grupo_muscular, treino) {
+            console.log('estou no model' + idUsuario + grupo_muscular + treino);
             console.log("Executando a instrução SQL: \n" + instrucaoSql2);
             var instrucaoSql2 = `
             select fkUsuario as usuario, fkGrupo as grupo, fkTreino as treino from curtida

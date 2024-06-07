@@ -18,7 +18,7 @@ function buscarTriceps() {
     select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
     where fkGrupo = 6
-    group by curtida.fkgrupo, fktreino;
+   group by curtida.fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -31,7 +31,7 @@ function buscarBiceps() {
     select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
     where fkGrupo = 5
-    group by curtida.fkgrupo, fktreino;
+    group by curtida.fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -44,7 +44,7 @@ function buscarPosterior() {
     select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
     where fkGrupo = 4
-    group by curtida.fkgrupo, fktreino;
+    group by curtida.fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -57,7 +57,7 @@ function buscarQuadriceps() {
     select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
     where fkGrupo = 3
-    group by curtida.fkgrupo, fktreino;
+    group by curtida.fktreino;
         `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -70,7 +70,7 @@ function buscarPeitoral() {
     select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
     where fkGrupo = 2
-    group by curtida.fkgrupo, fktreino;
+    group by curtida.fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -83,7 +83,7 @@ function buscarDorsal() {
     select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
     where fkGrupo = 1
-    group by curtida.fkgrupo, fktreino;
+    group by curtida.fktreino;
      `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

@@ -64,40 +64,6 @@ foreign key (fkUsuario) references usuario (id),
 foreign key (fkGrupo) references grupo_muscular (idGrupo),
 foreign key (fkTreino) references treino (idtreino));
 
-insert into curtida values
-(1, 1, 1, null),
-(2, 1, null, 1),
-(3, 1, 1, null),
-(4, 1, null, 1),
-(5, 1, 1, null),
-(6, 1, 1, 1),
-(1, 2, null, 1),
-(2, 2, 1, 1),
-(3, 2, 1, null),
-(4, 2, 1, 1),
-(5, 2, 1, null),
-(6, 3, 1, null),
-(1, 3, null, 1),
-(2, 3, 1, null),
-(3, 3, null, 1),
-(4, 3, null, 1),
-(5, 4, 1, 1),
-(6, 4, 1, 1),
-(1, 4, null, 1),
-(2, 4, 1, 1),
-(3, 4, 1, null),
-(4, 5, 1, 1),
-(5, 5, 1,null),
-(6, 5, null, 1),
-(1, 5, 1, null),
-(2, 5, 1, 1),
-(3, 6, 1, null),
-(4, 6, 1, 1),
-(5, 6, null, 1),
-(6, 6, 1, 1),
-(1, 6, 1, 1),
-(2, 6, 1, null);
-
 drop table combinacao;
 drop table treino;
 drop table exercicio;
@@ -183,7 +149,49 @@ insert into combinacao values
 (15, 37), (15, 39), (15, 38), 
 (16, 40), (16, 42), (16, 41);
 
+insert into curtida values
+(1, 1, 1, 1, null), (1, 1, 2, 1, null), (1, 1, 3, 1, null),
+(2, 1, 1, null, 1), (2, 1, 2, 1, null), (2, 1, 3, null, 1),
+(3, 1, 1, 1, null), (3, 1, 2, null, 1), (3, 1, 3, 1, null),
+(4, 1, 1, null, 1), (4, 1, 2, 1, null), (4, 1, 3, null, 1),
+(5, 1, 1, 1, null), (5, 1, 2, 1, 1), (5, 1, 3, 1, null),
+(6, 1, 1, null, 1), (6, 1, 2, 1, 1), (6, 1, 3, null, 1),
+(1, 2, 4, 1, null), (1, 2, 5, 1, null), (1, 2, 6, 1, null),
+(2, 2, 4, null, 1), (2, 2, 5, null, 1), (2, 2, 6, 1, null),
+(3, 2, 4, 1, null), (3, 2, 5, 1, 1), (3, 2, 6, null, 1),
+(4, 2, 4, null, 1), (4, 2, 5, 1, null), (4, 2, 6, 1, null),
+(5, 2, 4, 1, null), (5, 2, 5, 1, 1), (5, 2, 6, 1, null),
+(6, 2, 4, 1, null), (6, 2, 5, 1, 1), (6, 2, 6, 1, null),
+(1, 3, 7, 1, 1), (1, 3, 8, 1, null), (1, 3, 9, null, 1),
+(2, 3, 7, 1, null), (2, 3, 8, 1, null), (2, 3, 9, 1, 1),
+(3, 3, 7, 1, 1), (3, 3, 8, 1, null), (3, 3, 9, 1, 1),
+(4, 3, 7, 1, null), (4, 3, 8, 1, 1), (4, 3, 9, 1, null),
+(5, 3, 7, 1, null), (5, 3, 8, 1, null), (5, 3, 9, 1, null),
+(6, 3, 7, 1, null), (6, 3, 8, 1, null), (6, 3, 9, 1, null),
+
+(1, 4, 10, 1, 1), (1, 4, 11, 1, 1),
+(2, 4, 10, 1, null), (2, 4, 11, 1, null),
+(3, 4, 10, 1, 1), (3, 4, 11, 1, null),
+(4, 4, 10, 1, null), (4, 4, 11, 1, null),
+(5, 4, 10, 1, null), (5, 4, 11, 1, 1),
+(6, 4, 10, 1, null), (6, 4, 11, 1, null),
+
+(1, 5, 12, 1, null), (1, 5, 13, 1, 1), (1, 5, 14, 1, null),
+(2, 5, 12, 1, 1), (2, 5, 13, 1, 1), (2, 5, 14, 1, 1),
+(3, 5, 12, 1, null), (3, 5, 13, 1, 1), (3, 5, 14, 1, null),
+(4, 5, 12, 1, 1), (4, 5, 13, 1, 1), (4, 5, 14, 1, 1),
+(5, 5, 12, 1, 1), (5, 5, 13, 1, 1), (5, 5, 14, 1, null),
+(6, 5, 12, 1, null), (6, 5, 13, 1, 1), (6, 5, 14, 1, null),
+(1, 6, 15, 1, 1), (1, 6, 16, 1, null), 
+(2, 6, 15, 1, 1), (2, 6, 16, 1, null), 
+(3, 6, 15, 1, null), (3, 6, 16, 1, 1), 
+(4, 6, 15, 1, null), (4, 6, 16, 1, null), 
+(5, 6, 15, 1, 1), (5, 6, 16, 1, null), 
+(6, 6, 15, 1, null), (6, 6, 16, 1, 1);
+
 truncate table curtida;
+
+
 select * from exercicio;
 select * from curtida;
 select * from usuario;
@@ -197,8 +205,15 @@ group by curtida.fkgrupo;
 
 select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
 join treino on fktreino = idtreino
-group by curtida.fkgrupo, fktreino;
+group by curtida.fktreino;
 
 select curtida.fkUsuario, curtida.fkGrupo from curtida
 join usuario on fkusuario = id where id = 1;
 
+ select fkUsuario as usuario, fkGrupo as grupo, fkTreino as treino from curtida
+             where fkUsuario =1 and fkGrupo = 1 and fkTreino = 1;
+
+  select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+	where fkgrupo = 5
+    group by curtida.fktreino;

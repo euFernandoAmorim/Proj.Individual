@@ -157,7 +157,7 @@
 
 function gostei(checkbox){
   treino = Number(checkbox.value);
-
+  console.log('estou no html' + idUsuario + grupo_muscular + treino);
   fetch("/curtir/verificar_curtidas", {
             method: "POST",
             headers: {
