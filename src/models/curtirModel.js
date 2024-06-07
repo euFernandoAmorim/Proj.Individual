@@ -30,12 +30,12 @@ function cadastrar_descurtir(curtir, idUsuario, grupo_muscular, treino) {
 
 function verificar_curtidas(idUsuario, grupo_muscular, treino) {
             console.log('estou no model' + idUsuario + grupo_muscular + treino);
-            console.log("Executando a instrução SQL: \n" + instrucaoSql2);
-            var instrucaoSql2 = `
-            select fkUsuario as usuario, fkGrupo as grupo, fkTreino as treino from curtida
+            console.log("Executando a instrução SQL: \n" + instrucaoSql);
+            var instrucaoSql = `
+            select fkUsuario as usuario, fkGrupo as grupo, fkTreino as treininho from curtida
              where fkUsuario = ${idUsuario} and fkGrupo = ${grupo_muscular} and fkTreino = ${treino};
         `;
-            return database.executar(instrucaoSql2);
+            return database.executar(instrucaoSql);
         }
 
 
@@ -50,7 +50,7 @@ function remover(idUsuario, grupo_muscular, treino) {
         function remover_descurtir(idUsuario, grupo_muscular, treino) {
             console.log("Executando a instrução SQL: \n" + instrucaoSql6);
             var instrucaoSql6 = `
-            update curtida set descurtir = null where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular} and ${treino};
+            update curtida set descurtir = null where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular} and fkTreino = ${treino};
     `;
             return database.executar(instrucaoSql6);
         }
@@ -58,7 +58,7 @@ function remover(idUsuario, grupo_muscular, treino) {
         function atualizar(curtir, idUsuario, grupo_muscular, treino) {
             console.log("Executando a instrução SQL: \n" + instrucaoSql4);
             var instrucaoSql4 = `
-            update curtida set curtir = ${curtir} where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular} and ${treino};
+            update curtida set curtir = ${curtir} where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular} and fkTreino = ${treino};
     `;
             return database.executar(instrucaoSql4);
         }
@@ -66,7 +66,7 @@ function remover(idUsuario, grupo_muscular, treino) {
         function atualizar_descurtir(curtir, idUsuario, grupo_muscular, treino) {
             console.log("Executando a instrução SQL: \n" + instrucaoSql5);
             var instrucaoSql5 = `
-            update curtida set descurtir = ${curtir} where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular} and ${treino};
+            update curtida set descurtir = ${curtir} where fkusuario = ${idUsuario} and fkgrupo = ${grupo_muscular} and fkTreino = ${treino};
     `;
             return database.executar(instrucaoSql5);
         }

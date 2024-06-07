@@ -51,7 +51,6 @@
         </div>
     </div>
 
-    <div class="top"></div>
     
         <div class="dash" style="height: 650px;">
             <div id="alerta">
@@ -61,7 +60,8 @@
 
             <div id="grafico_musculos">
            
-            <div id="graficos" style="width: 1000px">
+            <div id="graficos" style="width: 1000px;">
+
                 <div id="grafico">
                     <div class="graph">
                         <canvas id="myChartCanvas"></canvas>
@@ -70,6 +70,17 @@
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
                     </div>
                 </div>
+
+
+                <div id="grafico">
+                    <div class="graph">
+                        <canvas id="myChartCanvas2"></canvas>
+                    </div>
+                    <div class="label-captura">
+                        <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="botoes">
@@ -78,7 +89,6 @@
             </div>
             </div>
         </div>
-    </div>
 
 
 </body>
@@ -104,26 +114,39 @@
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function voltar(){
         grafico_musculos.innerHTML = `
-         <div id="graficos" style="width: 1000px">
-                <div id="grafico">
-                    <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
-                    </div>
-                </div>
-            </div>
+        <div id="graficos" style="width: 1000px;">
 
-            <div class="botoes">
-                <button onclick="triceps()">Tríceps</button> <button onclick="biceps()">Bíceps</button> <button onclick="posterior()">Posterior</button>
-                <button onclick="quadriceps()">Quadríceps</button> <button onclick="peitoral()">Peitoral</button> <button onclick="dorsal()">Dorsal</button>
-        </div>`
+<div id="grafico">
+    <div class="graph">
+        <canvas id="myChartCanvas"></canvas>
+    </div>
+    <div class="label-captura">
+        <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
+    </div>
+</div>
+
+
+<div id="grafico">
+    <div class="graph">
+        <canvas id="myChartCanvas2"></canvas>
+    </div>
+    <div class="label-captura">
+        <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
+    </div>
+</div>
+
+</div>
+
+<div class="botoes">
+<button onclick="triceps()">Tríceps</button> <button onclick="biceps()">Bíceps</button> <button onclick="posterior()">Posterior</button>
+<button onclick="quadriceps()">Quadríceps</button> <button onclick="peitoral()">Peitoral</button> <button onclick="dorsal()">Dorsal</button>
+</div>`
 
             obterDadosGrafico();
     }
 
     function triceps(){
+
         grafico_musculos.innerHTML = `  
         <div class="grafico_musculo">
         <div class="botoes">
@@ -132,7 +155,7 @@
         <div id="graficos" style="width: 600px">
                 <div id="grafico">
                     <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
+                        <canvas style="width: 100%;" id="myChartCanvas"></canvas>
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
@@ -259,6 +282,7 @@
                     resposta.reverse();
 
                     plotarGrafico(resposta);
+                    plotarGrafico2(resposta);
 
                 });
             } else {
@@ -289,14 +313,14 @@
                     label: 'Likes',
                     data: [],
                     fill: false,
-                    backgroundColor: 'rgb(0, 126, 6)',
-                    tension: 0.1
-                },
-                {
-                    label: 'Deslikes',
-                    data: [],
-                    fill: false,
-                    backgroundColor: '#ad0303',
+                    backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 205, 86)',
+                    'rgb(201, 203, 207)',
+                    'rgb(54, 162, 235)',
+                    '#9151b6'
+                    ],
                     tension: 0.1
                 }
             ]
@@ -315,7 +339,6 @@
 
             labels.push(registro.musculo);
             dados.datasets[0].data.push(registro.curtidas);
-            dados.datasets[1].data.push(registro.descurtidas);
         }
 
         console.log('----------------------------------------------')
@@ -328,7 +351,7 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'bar',
+            type: 'polarArea',
             data: dados,
         };
 
@@ -339,6 +362,73 @@
         );
 
     }
+
+    function plotarGrafico2(resposta) {
+
+            console.log('iniciando plotagem do gráfico...');
+            console.log(resposta);
+
+            // Criando estrutura para plotar gráfico - labels
+            let labels = [];
+
+            // Criando estrutura para plotar gráfico - dados
+            let dados = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Deslikes',
+                        data: [],
+                        fill: false,
+                        backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 205, 86)',
+                    'rgb(201, 203, 207)',
+                    'rgb(54, 162, 235)',
+                    '#9151b6'
+                    ],
+                        tension: 0.1
+                    }
+                ]
+            };
+
+            console.log('----------------------------------------------')
+            console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+            console.log(resposta)
+
+            // Inserindo valores recebidos em estrutura para plotar o gráfico
+            for (i = 0; i < resposta.length; i++) {
+                var registro = resposta[i];
+
+                console.log("registro: ");
+                console.log(registro);
+
+                labels.push(registro.musculo);
+                dados.datasets[0].data.push(registro.descurtidas);
+            }
+
+            console.log('----------------------------------------------')
+            console.log('O gráfico será plotado com os respectivos valores:')
+            console.log('Labels:')
+            console.log(labels)
+            console.log('Dados:')
+            console.log(dados)
+            console.log('----------------------------------------------')
+
+            // Criando estrutura para plotar gráfico - config
+            const config = {
+                type: 'polarArea',
+                data: dados,
+            };
+
+            // Adicionando gráfico criado em div na tela
+            let myChart = new Chart(
+                document.getElementById(`myChartCanvas2`),
+                config
+            );
+
+            }
+    
 
     function obterTriceps() {
 
@@ -371,16 +461,23 @@ function plotarTriceps(resposta) {
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
-        labels: ['Likes', 'Deslikes'],
+        labels: labels,
         datasets: [
-            {
-                label: 'Tríceps',
-                data: [],
-                fill: false,
-                backgroundColor: ['rgb(0, 126, 6)', '#ad0303'],
-                tension: 0.1
-            }
-        ]
+                {
+                    label: 'Likes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: 'rgb(0, 126, 6)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Deslikes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ad0303',
+                    tension: 0.1
+                }
+            ]
     };
 
     console.log('----------------------------------------------')
@@ -394,9 +491,9 @@ function plotarTriceps(resposta) {
         console.log("registro: ");
         console.log(registro);
 
-        labels.push(registro.musculo);
+        labels.push(registro.treino);
         dados.datasets[0].data.push(registro.curtidas);
-        dados.datasets[0].data.push(registro.descurtidas);
+        dados.datasets[1].data.push(registro.descurtidas);
     }
 
     console.log('----------------------------------------------')
@@ -409,7 +506,7 @@ function plotarTriceps(resposta) {
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'pie',
+        type: 'bar',
         data: dados,
     };
 
@@ -453,16 +550,23 @@ function plotarBiceps(resposta) {
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
-        labels: ['Likes', 'Deslikes'],
+        labels: labels,
         datasets: [
-            {
-                label: 'Bíceps',
-                data: [],
-                fill: false,
-                backgroundColor: ['rgb(0, 126, 6)', '#ad0303'],
-                tension: 0.1
-            }
-        ]
+                {
+                    label: 'Likes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: 'rgb(0, 126, 6)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Deslikes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ad0303',
+                    tension: 0.1
+                }
+            ]
     };
 
     console.log('----------------------------------------------')
@@ -476,9 +580,9 @@ function plotarBiceps(resposta) {
         console.log("registro: ");
         console.log(registro);
 
-        labels.push(registro.musculo);
+        labels.push(registro.treino);
         dados.datasets[0].data.push(registro.curtidas);
-        dados.datasets[0].data.push(registro.descurtidas);
+        dados.datasets[1].data.push(registro.descurtidas);
     }
 
     console.log('----------------------------------------------')
@@ -491,7 +595,7 @@ function plotarBiceps(resposta) {
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'pie',
+        type: 'bar',
         data: dados,
     };
 
@@ -535,16 +639,23 @@ function plotarQuadriceps(resposta) {
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
-        labels: ['Likes', 'Deslikes'],
+        labels: labels,
         datasets: [
-            {
-                label: 'Quadríceps',
-                data: [],
-                fill: false,
-                backgroundColor: ['rgb(0, 126, 6)', '#ad0303'],
-                tension: 0.1
-            }
-        ]
+                {
+                    label: 'Likes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: 'rgb(0, 126, 6)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Deslikes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ad0303',
+                    tension: 0.1
+                }
+            ]
     };
 
     console.log('----------------------------------------------')
@@ -558,9 +669,9 @@ function plotarQuadriceps(resposta) {
         console.log("registro: ");
         console.log(registro);
 
-        labels.push(registro.musculo);
+        labels.push(registro.treino);
         dados.datasets[0].data.push(registro.curtidas);
-        dados.datasets[0].data.push(registro.descurtidas);
+        dados.datasets[1].data.push(registro.descurtidas);
     }
 
     console.log('----------------------------------------------')
@@ -573,7 +684,7 @@ function plotarQuadriceps(resposta) {
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'pie',
+        type: 'bar',
         data: dados,
     };
 
@@ -582,7 +693,6 @@ function plotarQuadriceps(resposta) {
         document.getElementById(`myChartCanvas`),
         config
     );
-
     }
 
 
@@ -617,16 +727,23 @@ function plotarPosterior(resposta) {
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
-        labels: ['Likes', 'Deslikes'],
+        labels: labels,
         datasets: [
-            {
-                label: 'Posterior',
-                data: [],
-                fill: false,
-                backgroundColor: ['rgb(0, 126, 6)', '#ad0303'],
-                tension: 0.1
-            }
-        ]
+                {
+                    label: 'Likes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: 'rgb(0, 126, 6)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Deslikes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ad0303',
+                    tension: 0.1
+                }
+            ]
     };
 
     console.log('----------------------------------------------')
@@ -640,9 +757,9 @@ function plotarPosterior(resposta) {
         console.log("registro: ");
         console.log(registro);
 
-        labels.push(registro.musculo);
+        labels.push(registro.treino);
         dados.datasets[0].data.push(registro.curtidas);
-        dados.datasets[0].data.push(registro.descurtidas);
+        dados.datasets[1].data.push(registro.descurtidas);
     }
 
     console.log('----------------------------------------------')
@@ -655,7 +772,7 @@ function plotarPosterior(resposta) {
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'pie',
+        type: 'bar',
         data: dados,
     };
 
@@ -664,7 +781,6 @@ function plotarPosterior(resposta) {
         document.getElementById(`myChartCanvas`),
         config
     );
-
     }
 
 
@@ -699,16 +815,23 @@ function plotarDorsal(resposta) {
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
-        labels: ['Likes', 'Deslikes'],
+        labels: labels,
         datasets: [
-            {
-                label: 'Dorsal',
-                data: [],
-                fill: false,
-                backgroundColor: ['rgb(0, 126, 6)', '#ad0303'],
-                tension: 0.1
-            }
-        ]
+                {
+                    label: 'Likes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: 'rgb(0, 126, 6)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Deslikes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ad0303',
+                    tension: 0.1
+                }
+            ]
     };
 
     console.log('----------------------------------------------')
@@ -722,9 +845,9 @@ function plotarDorsal(resposta) {
         console.log("registro: ");
         console.log(registro);
 
-        labels.push(registro.musculo);
+        labels.push(registro.treino);
         dados.datasets[0].data.push(registro.curtidas);
-        dados.datasets[0].data.push(registro.descurtidas);
+        dados.datasets[1].data.push(registro.descurtidas);
     }
 
     console.log('----------------------------------------------')
@@ -737,7 +860,7 @@ function plotarDorsal(resposta) {
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'pie',
+        type: 'bar',
         data: dados,
     };
 
@@ -781,16 +904,23 @@ function plotarPeitoral(resposta) {
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
-        labels: ['Likes', 'Deslikes'],
+        labels: labels,
         datasets: [
-            {
-                label: 'Peitoral',
-                data: [],
-                fill: false,
-                backgroundColor: ['rgb(0, 126, 6)', '#ad0303'],
-                tension: 0.1
-            }
-        ]
+                {
+                    label: 'Likes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: 'rgb(0, 126, 6)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Deslikes',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ad0303',
+                    tension: 0.1
+                }
+            ]
     };
 
     console.log('----------------------------------------------')
@@ -804,9 +934,9 @@ function plotarPeitoral(resposta) {
         console.log("registro: ");
         console.log(registro);
 
-        labels.push(registro.musculo);
+        labels.push(registro.treino);
         dados.datasets[0].data.push(registro.curtidas);
-        dados.datasets[0].data.push(registro.descurtidas);
+        dados.datasets[1].data.push(registro.descurtidas);
     }
 
     console.log('----------------------------------------------')
@@ -819,7 +949,7 @@ function plotarPeitoral(resposta) {
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'pie',
+        type: 'bar',
         data: dados,
     };
 
