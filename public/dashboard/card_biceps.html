@@ -44,7 +44,8 @@
     </div>
 </div>
 
-        <div class="dash">
+    <div class="dash">
+          <div class="escuro">
             <div id="alerta">
             </div>
 
@@ -61,9 +62,9 @@
               <div class="card_content">
               <div class="descricao">
 
-                      <p class="title">Treino 1</p>
-                      <p class="texto"> • Remada Curvada<br> • Serrote<br> • Remada Baixa Unilateral<br>
-                        • Remada Cavalinho</p>
+                      <p class="title">Bíceps 1</p>
+                      <p class="texto"> • Rosca Direta Barra W<br> • Rsca Scott <br> • Rosca 45<br>
+                        • Rosca Martelo</p>
 
               </div>  
             </div>
@@ -87,9 +88,9 @@
           <div class="card_content">
           <div class="descricao">
 
-                  <p class="title">Treino 2</p>
-                  <p class="texto"> • Remada Curvada<br> • Serrote<br> • Remada Baixa Unilateral<br>
-                    • Remada Cavalinho</p>
+                  <p class="title">Bíceps 2</p>
+                  <p class="texto"> • Rosca direta com Halteres Curvada<br> • Rosca Martelo<br> • Rosca 45<br>
+                    • Rosca Scott</p>
 
           </div>  
         </div>
@@ -112,9 +113,9 @@
       <div class="card_content">
       <div class="descricao">
 
-              <p class="title">Treino 2</p>
-              <p class="texto"> • Remada Curvada<br> • Serrote<br> • Remada Baixa Unilateral<br>
-                • Remada Cavalinho</p>
+              <p class="title">Bíceps 3</p>
+              <p class="texto"> • Rosca Martelo<br> • Rosca Direta com Halteres<br> • Rosca 45 <br>
+                • Rosca 21</p>
 
       </div>  
     </div>
@@ -138,15 +139,15 @@
 
 
 </div>
-       
-
+</div>  
+</div>
 </body>
 
 <script>
   var curtir = 1;
   var idUsuario = sessionStorage.ID_USUARIO;
   var nomeUsuario = sessionStorage.NOME_USUARIO;
-  var grupo_muscular = 1;
+  var grupo_muscular = 5;
   var treino = 0;
   var cadastrado = 0;
   b_usuario.innerHTML = nomeUsuario;
@@ -179,7 +180,7 @@ function gostei(checkbox){
             if (json.resultado_verificar_curtidas != undefined && json.resultado_verificar_curtidas.length > 0) {
               var usuario = (json.resultado_verificar_curtidas[0]).usuario;
               var grupo = (json.resultado_verificar_curtidas[0]).grupo;
-              var treininho = (json.resultado_verificar_curtidas[0]).treino;
+              var treininho = (json.resultado_verificar_curtidas[0]).treininho;
 
               if((usuario == idUsuario) && (grupo == grupo_muscular) && (treininho == treino)){
                 
@@ -298,7 +299,7 @@ function gostei(checkbox){
             if (json.resultado_verificar_curtidas != undefined && json.resultado_verificar_curtidas.length > 0) {
               var usuario = (json.resultado_verificar_curtidas[0]).usuario;
               var grupo = (json.resultado_verificar_curtidas[0]).grupo;
-              var treininho = (json.resultado_verificar_curtidas[0]).treino;
+              var treininho = (json.resultado_verificar_curtidas[0]).treininho;
 
               if((usuario == idUsuario) && (grupo == grupo_muscular) && (treininho == treino)){
                 

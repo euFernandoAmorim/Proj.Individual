@@ -53,6 +53,7 @@
 
     
         <div class="dash" style="height: 650px;">
+            <div class="escuro">
             <div id="alerta">
             </div>
 
@@ -62,7 +63,7 @@
            
             <div id="graficos" style="width: 1000px;">
 
-                <div id="grafico">
+                <div id="grafico" class="left">
                     <div class="graph">
                         <canvas id="myChartCanvas"></canvas>
                     </div>
@@ -72,7 +73,7 @@
                 </div>
 
 
-                <div id="grafico">
+                <div id="grafico" class="right">
                     <div class="graph">
                         <canvas id="myChartCanvas2"></canvas>
                     </div>
@@ -88,6 +89,7 @@
                 <button onclick="quadriceps()">Quadríceps</button> <button onclick="peitoral()">Peitoral</button> <button onclick="dorsal()">Dorsal</button>
             </div>
             </div>
+        </div>
         </div>
 
 
@@ -116,7 +118,7 @@
         grafico_musculos.innerHTML = `
         <div id="graficos" style="width: 1000px;">
 
-<div id="grafico">
+<div id="grafico" class="left">
     <div class="graph">
         <canvas id="myChartCanvas"></canvas>
     </div>
@@ -126,7 +128,7 @@
 </div>
 
 
-<div id="grafico">
+<div id="grafico" class="right">
     <div class="graph">
         <canvas id="myChartCanvas2"></canvas>
     </div>
@@ -152,7 +154,7 @@
         <div class="botoes">
                     <button onclick="voltar()"> Voltar </button>
         </div>
-        <div id="graficos" style="width: 600px">
+        <div id="graficos" style="width: 1200px">
                 <div id="grafico">
                     <div class="graph">
                         <canvas style="width: 100%;" id="myChartCanvas"></canvas>
@@ -173,10 +175,10 @@
         <div class="botoes">
                     <button onclick="voltar()"> Voltar </button>
         </div>
-        <div id="graficos" style="width: 600px">
+        <div id="graficos" style="width: 1200px">
                 <div id="grafico">
                     <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
+                        <canvas style="width: 100%;" id="myChartCanvas"></canvas>
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
@@ -184,7 +186,6 @@
                 </div>
             </div>
             </div>`
-
             obterBiceps();
     }
 
@@ -194,10 +195,10 @@
         <div class="botoes">
                     <button onclick="voltar()"> Voltar </button>
         </div>
-        <div id="graficos" style="width: 600px">
+        <div id="graficos" style="width: 1200px">
                 <div id="grafico">
                     <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
+                        <canvas style="width: 100%;" id="myChartCanvas"></canvas>
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
@@ -205,7 +206,6 @@
                 </div>
             </div>
             </div>`
-
             obterQuadriceps();
     }
 
@@ -215,10 +215,10 @@
         <div class="botoes">
                     <button onclick="voltar()"> Voltar </button>
         </div>
-        <div id="graficos" style="width: 600px">
+        <div id="graficos" style="width: 1200px">
                 <div id="grafico">
                     <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
+                        <canvas style="width: 100%;" id="myChartCanvas"></canvas>
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
@@ -226,7 +226,6 @@
                 </div>
             </div>
             </div>`
-
             obterPosterior();
     }
 
@@ -236,10 +235,10 @@
         <div class="botoes">
                     <button onclick="voltar()"> Voltar </button>
         </div>
-        <div id="graficos" style="width: 600px">
+        <div id="graficos" style="width: 1200px">
                 <div id="grafico">
                     <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
+                        <canvas style="width: 100%;" id="myChartCanvas"></canvas>
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
@@ -247,7 +246,6 @@
                 </div>
             </div>
             </div>`
-
             obterDorsal();
     }
 
@@ -257,10 +255,10 @@
         <div class="botoes">
                     <button onclick="voltar()"> Voltar </button>
         </div>
-        <div id="graficos" style="width: 600px">
+        <div id="graficos" style="width: 1200px">
                 <div id="grafico">
                     <div class="graph">
-                        <canvas id="myChartCanvas"></canvas>
+                        <canvas style="width: 100%;" id="myChartCanvas"></canvas>
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura" style="color: rgb(255, 255, 255)"></p>
@@ -268,7 +266,6 @@
                 </div>
             </div>
             </div>`
-
             obterPeitoral();
     }
 
@@ -314,12 +311,12 @@
                     data: [],
                     fill: false,
                     backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(75, 192, 192)',
-                    'rgb(255, 205, 86)',
-                    'rgb(201, 203, 207)',
-                    'rgb(54, 162, 235)',
-                    '#9151b6'
+                    '#2DC7FF',
+                    '#A10702',
+                    '#0CCE6B',
+                    '#FFFAFF',
+                    '#FB5607',
+                    '#7F0799'
                     ],
                     tension: 0.1
                 }
@@ -380,12 +377,12 @@
                         data: [],
                         fill: false,
                         backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(75, 192, 192)',
-                    'rgb(255, 205, 86)',
-                    'rgb(201, 203, 207)',
-                    'rgb(54, 162, 235)',
-                    '#9151b6'
+                    '#2DC7FF',
+                    '#A10702',
+                    '#0CCE6B',
+                    '#FFFAFF',
+                    '#FB5607',
+                    '#7F0799'
                     ],
                         tension: 0.1
                     }
@@ -467,14 +464,14 @@ function plotarTriceps(resposta) {
                     label: 'Likes',
                     data: [],
                     fill: false,
-                    backgroundColor: 'rgb(0, 126, 6)',
+                    backgroundColor: '#1EFC1E',
                     tension: 0.1
                 },
                 {
                     label: 'Deslikes',
                     data: [],
                     fill: false,
-                    backgroundColor: '#ad0303',
+                    backgroundColor: '#FF0000',
                     tension: 0.1
                 }
             ]

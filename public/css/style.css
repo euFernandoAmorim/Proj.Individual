@@ -30,7 +30,7 @@ body {
 
 .top{
     width: 100%;
-    height: 115px;
+    height: 82px;
     background-color: black;
 }
 
@@ -176,7 +176,7 @@ body {
 }
 
 .social {
-    background-color: #fff;
+    background-color: #F0EDEE;
     padding: 40px 20px 30px 10px;
     color: black;
 }
@@ -273,7 +273,7 @@ body {
 .escuro{
     height: 100%;
     width: 100%;
-    background-color: #000000af;
+    background-color: #000000c9;
 }
 
 .modalidades .container{
@@ -371,4 +371,144 @@ a{
     text-decoration: none;
     font-weight: bold;
     font-family: Poppins, sans-serif;
+}
+
+.IMC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 900px;
+    width: 100%;
+    background-color: #F0EDEE;
+    margin: 0;
+    font-family: Candara;
+    font-size: 20px;
+}
+
+.IMC .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    background-color: #0f0f0f;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.IMC .container .titulo{
+    width: 85%;
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+
+.calculo_imc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 60%;
+    border-radius: 15px;
+}
+
+.coluna{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.cinza{
+    background-color: #292828;
+}
+
+.joao{
+    width: 50%;
+    display: flex;
+    border-right: 1px solid #0f0f0f;
+}
+
+.coluna p{
+    margin-left: 20px;
+}
+
+.kleber{
+    width: 50%;
+    display: flex;
+}
+
+.calculo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.formula{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.formula input{
+    color: #fff;
+    background-color: #000;
+    height: 50%;
+    margin-left: 10px;
+}
+
+.almeida{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.IMC button{
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #970c0c, #bd2424);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+}
+
+.IMC button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+   }
+   
+   @keyframes pulse512 {
+    0% {
+     box-shadow: 0 0 0 0 #ffffff66;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+   }
+
+#result {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 200px;
+}
+
+.protocolos .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -136,11 +136,11 @@ insert into combinacao values
 (2, 1), (2, 3), (2, 6), (2, 8),
 (3, 4), (3, 2), (3, 1), (3, 7),
 (4, 12), (4, 9), (4, 16), (4, 15),
-(5, 10), (5, 11), (5, 18), (5, 17),
-(6, 11), (6, 10), (6, 15), (6, 17),
+(5, 10), (5, 11), (5, 14), (5, 17),
+(6, 12), (6, 10), (6, 15), (6, 17),
 (7, 19), (7, 20), (7, 21), (7, 23),
-(8, 22), (8, 19), (8, 24), (8, 25),
-(9, 20), (9, 21), (9, 25), (9, 24),
+(8, 22), (8, 18), (8, 23), (8, 25),
+(9, 19), (9, 21), (9, 24), (9, 23),
 (10, 30), (10, 28), (10, 27), (10, 29),
 (11, 25), (11, 26), (11, 27), (11, 29),
 (12, 31), (12, 32), (12, 33), (12, 34),
@@ -207,13 +207,13 @@ select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as de
 join treino on fktreino = idtreino
 group by curtida.fktreino;
 
-select curtida.fkUsuario, curtida.fkGrupo from curtida
-join usuario on fkusuario = id where id = 1;
-
- select fkUsuario as usuario, fkGrupo as grupo, fkTreino as treino from curtida
-             where fkUsuario =1 and fkGrupo = 1 and fkTreino = 1;
 
   select treino.nome as musculo, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
     join treino on fktreino = idtreino
 	where fkgrupo = 5
+    group by curtida.fktreino;
+    
+        select treino.nome as treino, count(curtir) as curtidas, count(descurtir) as descurtidas from curtida
+    join treino on fktreino = idtreino
+    where fkGrupo = 1
     group by curtida.fktreino;
