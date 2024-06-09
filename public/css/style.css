@@ -378,9 +378,9 @@ a{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 900px;
+    height: 1100px;
     width: 100%;
-    background-color: #F0EDEE;
+    background-color: #dfdbdc;
     margin: 0;
     font-family: Candara;
     font-size: 20px;
@@ -396,6 +396,7 @@ a{
     background-color: #0f0f0f;
     color: #fff;
     border-radius: 15px;
+    margin-bottom: 50px;
 }
 
 .IMC .container .titulo{
@@ -478,6 +479,7 @@ a{
     font-family: inherit;
     font-size: 17px;
     padding: 0.6em 1.5em;
+    margin-bottom: 30px;
 }
 
 .IMC button:hover {
@@ -506,9 +508,125 @@ a{
     margin-left: 200px;
 }
 
-.protocolos .container{
+
+
+.hipertrofia{
+    background-color: #000;
+    width: 100%;
+    color: #fff;
+    font-family: candara;
+    font-size: 35px;
+    height: 100vh;
+}
+
+.hipertrofia h1{
+    margin-top: 0;
+}
+
+.hipertrofia .container{
+    width: 100%;
+    background-image: url(arnold.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hipertrofia .escuro{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    background-color: #00000073;
+}
+
+.sobre{
+    display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
+    width: 80%;
+    height: 40%;
+    border-radius: 20px;
+    background-color: #000000d2;
+    font-size: 20px;
+}
+
+.sobre p{
+    width: 80%;
+}
+
+.pedro{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    font-family: Candara;
+}
+
+.metodos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 50px;
+    background-color: #dfdbdc;
+}
+
+.metodos .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 1500px;
+    background-image: url("fundo3.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.esquerda{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left    ;
+    width: 60%;
+    height: 250px;
+    background-color: #000000c9;
+    border-radius: 0px 20px 20px 0px;
+    color: #fff;
+}
+
+.conteudo p{
+    width: 90%;;
+}
+
+.direita{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: right;
+}
+
+.direita .conteudo{
+    border-radius: 20px 0px 0px 20px;
+}
+
+.metodos .escuro{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #0000005b;
+    border-radius: 20px;
 }

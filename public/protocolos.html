@@ -17,19 +17,21 @@
             <ul class="navbar">
                 <a href="index.html" class="agora">Home</a>
            
-                <a href="protocolos.html">Protocolos</a>
+                <a href="protocolos.html">Treino</a>
            
                 <a href="login.html">Login</a>
              
-                <a href="cadastro.html">Cadastro</a>
             </ul>
         </div>
     </div>
 
     <div class="top"></div>
-    
+
     <div class="IMC">
+        <div class="pedro">
         <h1> Índice de Massa Corporal</h1>
+        <p>O IMC é uma medida que relaciona o seu peso com a sua altura, ajudando avaliar se você está em um peso ideal em relação a sua altura. Ter este conhecimento ajuda a traçar quais os seus objetivos e tipos de treino ideal. <br><br>
+            No entanto, é importante reconhecer que o IMC é uma medida simplificada e tem suas limitações. </p></div>
         <div class="container">
           <div class="titulo"> <h2>Cálculo do IMC</h2></div>
 
@@ -63,13 +65,63 @@
         </div>
     </div>
 
-    <div class="protocolos">
+    <div class="hipertrofia">
         <div class="container">
+            <div class="escuro">
+            <h1>Hipertrofia</h1>
 
+                <div class="sobre">
+                    <p>No contexto do exercício físico e da musculação, a hipertrofia refere-se ao aumento do tamanho dos músculos devido ao treinamento de resistência, como levantamento de pesos. Isso ocorre quando as fibras musculares são submetidas a tensão repetida e sobrecarga, levando a microlesões que, quando reparadas, resultam em músculos maiores e mais fortes. Esse processo de reparo e crescimento resulta na hipertrofia muscular, onde as células musculares aumentam em tamanho e volume.</p>
+                </div>
 
-
-            
+            </div>
         </div>
+
+    </div>
+    
+
+    <div class="metodos">
+        <h1>Principais métodos de treino</h1>
+        <div class="container">
+        <div class="escuro">
+        <div class="esquerda">
+            <div class="conteudo">
+                <h2>Pirâmide Crescente</h2>
+                <p>Esse método de treino consiste em aumentar ou diminuir a carga e repetições entre as séries. Na pirâmide crescente, os pesos aumentam e as repetições diminuem. O contrário acontece na pirâmide decrescente. 
+
+                    A pirâmide completa segue a mesma lógica da crescente. É um ótimo método de treino para estimular a hipertrofia muscular e aumentar a força. </p>
+            </div>
+        </div>
+
+        <div class="direita">
+            <div class="conteudo">
+                <h2>Bi-set</h2>
+                <p>Aqui são realizados dois exercícios – do mesmo grupo muscular ou de grupos musculares diferentes – sem que haja intervalo entre eles. O descanso, de aproximadamente um minuto e 30 segundos, é feito apenas após a execução dos dois exercícios.</p>
+            </div>
+        </div>
+
+        <div class="esquerda">
+            <div class="conteudo">
+                <h2>Angonista/Antagonista</h2>
+                <p>Consiste na realização de dois exercícios sem intervalo, intercalando os músculos agonistas e antagonistas. Por exemplo: Rosca Bíceps e Tríceps Polia.</p>
+            </div>
+        </div>
+
+        <div class="direita">
+            <div class="conteudo">
+                <h2>Exaustão</h2>
+                <p>Como o nome já diz, consiste na realização de várias repetições de determinado exercício até a falha – ou seja, quando a fase concêntrica do movimento não é concluída.  </p>
+            </div>
+        </div>
+
+        <div class="esquerda">
+            <div class="conteudo">
+                <h2>Drop set</h2>
+                <p>Nesse método, o aluno deve executar duas ou três séries de seis a oito repetições com peso máximo. Em seguida, sem intervalo, reduz 20% da carga com repetições até a exaustão. Depois disso, diminui novamente a carga até chegar na exaustão. </p>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
   
 
@@ -87,7 +139,7 @@
     function imc(){
         const peso = input_peso.value;
         const altura = input_altura.value;
-        var imc = (peso / (altura * altura)).toFixed(2)
+        var imc = Number((peso / (altura * altura)).toFixed(2))
         var classificacao = '0;'
 
         if(imc < 18.5){
@@ -100,7 +152,11 @@
             classificacao = 'Obesidade.'
         }
 
-        result.innerHTML = `${imc} - ${classificacao}`
+    
+            result.innerHTML = `${imc} - ${classificacao}`
+        
+
+       
     }
 
 </script>
