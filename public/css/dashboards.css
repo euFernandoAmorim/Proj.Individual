@@ -64,7 +64,7 @@ body {
   flex-direction: row;
   list-style: none;
   width: 500px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: white;
   align-items: center;
 }
@@ -165,7 +165,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: #fff;
   font-weight: 600;
   width: fit-content;
   margin: 10px 20px;
@@ -266,7 +266,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: #fff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
@@ -502,18 +502,50 @@ canvas {
 
 
 .btn-logout {
-  margin: 0;
-  margin-top: 27px;
-  padding: 0;
-  width: 60px;
-  height: 25px;
-  background-color: #ad0303;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 18px;
+  margin-left: -10px;
+  margin-top: 23px;
+width: 70px;
+height: 30px;
+ border: unset;
+ border-radius: 8px;
+ color: #212121;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+ border: 1px solid #fff;
+ cursor: pointer;
 }
+
+.btn-logout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 8px;
+  background-color: #ad0303;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+
+ .btn-logout:hover {
+  color: #e8e8e8;
+ }
+ 
+
+ .btn-logout:hover::before {
+  width: 100%;
+ }
 
 .fernando {
   display: flex;
@@ -580,51 +612,87 @@ canvas {
 .right{
   border-radius: 0 20px 20px 0;
 }
-
-.cards_musculos .card {
-  color: #fff;
+.card-container {
   width: 300px;
   height: 200px;
-  background-color: #000;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card-container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.cards_musculos .card {
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.cards_musculos .card .img-content {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
-  color: #333;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border-radius: 40px;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.7s ease-in-out;
-  overflow: hidden;
-  border: 3px solid #ad0303;
-
+  background: linear-gradient(-45deg, #3f89e9 0%, #c40101 100% );
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
 }
 
-.cards_musculos .card a{
-  color: #fff;
-  text-decoration: none;
+.cards_musculos .card .img-content img {
+  width: 80px;
+  height: 80px;
+  fill: #e8e8e8;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.cards_musculos .card::before {
-  content: "";
+.cards_musculos .card .content {
   position: absolute;
-  height: 40%;
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: #ad0303;
-  bottom: 0;
-  right: 0;
-  transform: translatey(70px);
-  border-radius: 100%;
-  transition: all 0.7s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  color: #e8e8e8;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.c-txt {
-  z-index: 2;
+.cards_musculos .card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
 }
 
-.cards_musculos .card:hover::before {
-  transform: scale(7) translate(-20px);
+.cards_musculos .card:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cards_musculos .card:hover .img-content {
+  scale: 2.5;
+  rotate: 30deg;
+  filter: blur(7px);
+}
+
+.cards_musculos .card:hover .img-content img {
+  fill: transparent;
 }
 
 .escuro{

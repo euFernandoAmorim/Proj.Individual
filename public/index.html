@@ -104,47 +104,46 @@
         </div>
     </div>
 
-    <div class="modalidades">
-        <div class="escuro">
+
+    <div class="IMC">
+        <div class="pedro">
+        <h1> Índice de Massa Corporal</h1>
+        <p>O IMC é uma medida que relaciona o seu peso com a sua altura, ajudando avaliar se você está em um peso ideal em relação a sua altura. Ter este conhecimento ajuda a traçar quais os seus objetivos e tipos de treino ideal. <br><br>
+            No entanto, é importante reconhecer que o IMC é uma medida simplificada e tem suas limitações. </p></div>
         <div class="container">
-            <h1>Tipos de Treino</h1>
+          <div class="titulo"> <h2>Cálculo do IMC</h2></div>
 
-            <div class="treinos">
-           <div class="treino">
-            <h2>Força</h2>
-            <p>Treino com pesos mais pesados e menos repetições para estimular o desenvolvimento muscular.
-            envolve exercícios compostos, como: agachamentos, supino e levantamento terra.</p>
+           <div class="calculo_imc">
+            <div class="coluna cinza">
+                <div class="joao"><p>IMC</p></div> <div class="kleber"><p>Classificação</p></div>
+            </div>
+            <div class="coluna">
+                <div class="joao"><p>Abaixo de 18,5</p></div> <div class="kleber"><p>Abaixo do Peso</p></div>
+            </div>
+            <div class="coluna cinza">
+                <div class="joao"><p>18,5 - 24,9</p></div> <div class="kleber"><p>Peso Normal</p></div>
+            </div>
+            <div class="coluna">
+                <div class="joao"><p>25 - 29,9</p></div> <div class="kleber"><p>Sobrepeso</p></div>
+            </div>
+            <div class="coluna cinza">
+                <div class="joao"><p>Acima de 30</p></div> <div class="kleber"><p>Obesidade</p></div>
+            </div>
+
+            <div class="calculo">
+                <p>Cálcule o seu IMC: </p> <p id="result"></p>
+            </div>
+
+            <div class="formula">
+                <div class="almeida"><p>Peso:</p> <input id="input_peso" placeholder="Em Kg" type="number"></div> <div class="almeida"><p>Altura:</p> <input id="input_altura" placeholder="Em metros" type="number"></div>
+            </div>
+
+            <button onclick="imc()">Calcular</button>
            </div>
-
-           <div class="treino">
-            <h2>Hipertrofia</h2>
-            <p>Treino com pesos moderados a pesados, geralmente envolve 8 a 12 repetições xpor conjunto, com um volume total de séries mais elevado e um descanso adequado para permitir a recuperação.</p>
-           </div>
-            </div>
-
-            <div class="linhas">
-                <div class="linha"></div>
-                <div class="num"><div class="linha_cima"></div><div class="numero"><span>1</span></div></div>
-                <div class="linha"></div>
-                <div class="num"><div class="numero"><span>2</span></div><div class="linha_baixo"></div></div>
-                <div class="linha"></div>
-                <div class="num"><div class="linha_cima"></div><div class="numero"><span>3</span></div></div>
-                <div class="linha"></div>
-            </div>
-
-            <div class="treinoss">
-                <div class="treinos">
-                    <div class="treino">
-                     <h2>Queima de gordura</h2>
-                     <p>Treino focado em exercícios que elevam a frequência cardíaca, como circuitos de alta intensidade ou intervalados, combinandos com exercícios de resistência.
-                        Inclui exercícios aeróbicos, exercícios de peso corporal ou com pesos leves e alta repetição para manter a massa muscular enquanto se queima gordura.
-                     </p>
-                    </div>
-            </div>
-
         </div>
     </div>
-    </div>
+
+   
 
     <div class="footer">
         <div class="container">
@@ -154,3 +153,29 @@
 
 </body>
 </html>
+
+<script>
+  function imc(){
+        const peso = input_peso.value;
+        const altura = input_altura.value;
+        var imc = Number((peso / (altura * altura)).toFixed(2))
+        var classificacao = '0;'
+
+        if(imc < 18.5){
+            classificacao = 'Abaixo do peso.'
+        }else if (imc < 24.9){
+            classificacao = 'Peso normal.'
+        }else if (imc < 29.9){
+            classificacao = 'Sobrepeso.'
+        }else{
+            classificacao = 'Obesidade.'
+        }
+
+    
+            result.innerHTML = `${imc} - ${classificacao}`
+        
+
+       
+    }
+
+</script>

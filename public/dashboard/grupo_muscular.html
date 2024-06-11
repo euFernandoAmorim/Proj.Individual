@@ -25,8 +25,7 @@
             <a href="./grupo_muscular.html">Exercícios</a>
        
             <a href="./dashboard.html">Gráficos</a>
-       
-            <a href="./mural.html">Fórum</a>
+
          
         </ul>
     </div>
@@ -38,34 +37,76 @@
 
     <div class="container">
 
-      <div class="card">
-        <a class="c-txt" href="card_dorsal.html">Dorsal</a>
+      <div onclick="biceps()" class="card-container">
+        <div class="card">
+        <div class="img-content">
+        <img src="../imagens/biceps.png" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">Biceps</p>
+        </div>
+      </div>
       </div>
 
-      <div class="card">
-        <a class="c-txt" href="card_peitoral.html">Peitoral</a>
+      <div onclick="peitoral()" class="card-container">
+        <div class="card">
+        <div class="img-content">
+        <img src="../imagens/armaduras.png" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">Peitoral</p>
+        </div>
+      </div>
       </div>
 
-      <div class="card">
-        <a class="c-txt" href="card_quadriceps.html">Quadríceps</a>
+      <div onclick="quadriceps()" class="card-container">
+        <div class="card">
+        <div class="img-content">
+        <img src="../imagens/contorno-frontal-de-pernas-de-ginasta-masculina.png" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">Quadríceps</p>
+        </div>
+      </div>
       </div>
     </div>
-
     <div class="container">
 
-      <div class="card">
-        <a class="c-txt" href="card_posterior.html">Posterior</a>
+      <div onclick="posterior()" class="card-container">
+        <div class="card">
+        <div class="img-content">
+        <img src="../imagens/contorno-frontal-de-pernas-de-ginasta-masculina.png" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">Posterior</p>
+        </div>
+      </div>
       </div>
 
-      <div class="card">
-        <a class="c-txt" href="card_biceps.html">Bíceps</a>
+      <div onclick="dorsal()" class="card-container">
+        <div class="card">
+        <div class="img-content">
+        <img src="../imagens/back.png" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">Dorsal</p>
+        </div>
+      </div>
       </div>
 
-      <div class="card">
-        <a class="c-txt" href="card_triceps.html">Tríceps</a>
+      <div onclick="triceps()" class="card-container">
+        <div class="card">
+        <div class="img-content">
+        <img src="../imagens/biceps.png" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">Triceps</p>
+        </div>
       </div>
+      </div>
+      
     </div>
-  </div>
+
   </div>
 
 
@@ -76,6 +117,30 @@
 <script>
    var nomeUsuario = sessionStorage.NOME_USUARIO;
    b_usuario.innerHTML = nomeUsuario;
+
+   function dorsal(){
+    window.location.href = 'card_dorsal.html'
+   }
+
+   function peitoral(){
+    window.location.href = 'card_peitoral.html'
+   }
+
+   function quadriceps(){
+    window.location.href = 'card_quadriceps.html'
+   }
+
+   function posterior(){
+    window.location.href = 'card_posterior.html'
+   }
+
+   function biceps(){
+    window.location.href = 'card_biceps.html'
+   }
+
+   function triceps(){
+    window.location.href = 'card_triceps.html'
+   }
 
 
 
