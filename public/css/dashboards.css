@@ -27,6 +27,8 @@ body {
 .fernando h3{
   color: white;
   margin-top: 25px;
+  margin-left: 10px;
+  font-size: 15px;
 }
 
 .header a{
@@ -504,7 +506,7 @@ canvas {
 .btn-logout {
   margin-left: -10px;
   margin-top: 23px;
-width: 70px;
+width: 80px;
 height: 30px;
  border: unset;
  border-radius: 8px;
@@ -701,5 +703,22 @@ height: 30px;
   background-color: #00000057;
   display: flex;
   text-align: center;
+  flex-direction: column;
+}
+
+.legenda{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  width: 50%;
+}
+
+.titulos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   flex-direction: column;
 }
