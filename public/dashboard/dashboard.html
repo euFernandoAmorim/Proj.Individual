@@ -56,7 +56,7 @@
             </div>
             <div class="titulos">
             <h1 style="color:#fff;">Visão Geral das curtidas</h1>
-            <div class="legenda"><h2>Curtidas</h2> <h2>Descurtidas</h2></div>
+            <div class="legenda" id="legenda"><h2>Curtidas</h2> <h2>Descurtidas</h2></div>
             </div>
 
             <div id="grafico_musculos">
@@ -115,6 +115,7 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function voltar(){
+        legenda.innerHTML = ` <div class="legenda" id="legenda"><h2>Curtidas</h2> <h2>Descurtidas</h2></div>`
         grafico_musculos.innerHTML = `
         <div id="graficos" style="width: 1000px;">
 
@@ -148,7 +149,7 @@
     }
 
     function triceps(){
-  legenda.innerHTML = `<h2>Treinos</h2>`
+        legenda.innerHTML = `<h2>Treinos</h2>`
         grafico_musculos.innerHTML = `  
         <div class="grafico_musculo">
         <div class="botoes">

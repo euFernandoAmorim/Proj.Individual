@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <div class="container2">
     <div class="transparencia">
@@ -60,7 +60,7 @@
           </div>
           <div class="campo">
             <span>Data de Nascimento:</span>
-            <input id="dtnasc_input" type="text" placeholder="2024/03/07" />
+            <input id="dtnasc_input" type="text" placeholder="DD/MM/AAAA" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -107,7 +107,38 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var dtnascVar = dtnasc_input.value;
+    var dtnasc = dtnasc_input.value;
+    var indexArroba = emailVar.indexOf('@');
+    var indexMaiuscula = 0;
+    var indexEspecial = 0;
+
+    var  listaMaiuscula = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ç'];
+
+    var listaEspecial = ['!', '@', '#', '$', '%', '&', '*', '|'];
+
+    // dtnasc.replaceAll('/', '-');
+
+    // dtnasc tem 10 caracteres, 3 e 6 são /
+    
+
+    for(index = 0; index < senhaVar.length; index++){
+      for(index2 = 0; index2 < listaMaiuscula.length; index2++){
+        if(senhaVar[index] == listaMaiuscula[index2]){
+        indexMaiuscula++;
+      }
+      }
+    }
+
+    for(index = 0; index < senhaVar.length; index++){
+      for(index2 = 0; index2 < listaEspecial.length; index2++){
+
+        if(senhaVar[index] == listaEspecial[index2]){
+        indexEspecial++;
+      }
+      }
+    }
+
+
     if (
       nomeVar == "" ||
       emailVar == "" ||
@@ -117,11 +148,65 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "(Há campos em branco!)";
 
       finalizarAguardar();
       return false;
-    } else {
+
+    } else if(indexArroba < 0){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Insira um email válido!)";
+
+      finalizarAguardar();
+      return false;
+
+    }  else if(dtnasc.length < 10){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Insira uma data de nascimento de acordo com o modelo!)";
+
+      finalizarAguardar();
+      return false;
+
+    } 
+    else if(senhaVar != confirmacaoSenhaVar){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(As senhas devem ser iguais!)";
+
+      finalizarAguardar();
+      return false;
+
+    }else if(senhaVar.length < 6){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(A senha deve ter no mínimo 6 dígitos!)";
+
+      finalizarAguardar();
+      return false;
+    } 
+     else if(indexMaiuscula < 1){
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(A senha deve ter ao menos 1 letra maiúscula!)";
+
+      finalizarAguardar();
+      return false;
+
+    } else if(indexEspecial < 1){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(A senha deve ter ao menos 1 carácter especial!)";
+
+      finalizarAguardar();
+      return false;
+    }
+    
+    else {
+
+      var dtnascVar = dtnasc[6] + dtnasc[7] + dtnasc[8] + dtnasc[9] + '-' + dtnasc[3] + dtnasc[4] + '-' + dtnasc[0] + dtnasc[1];
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
